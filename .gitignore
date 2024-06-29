@@ -23,5 +23,50 @@ doc/api/
 *.js.deps
 *.js.map
 
+# Flutter specific files
 .flutter-plugins
 .flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+build/
+coverage/
+
+# IntelliJ related
+.idea/
+*.iml
+
+# VS Code related
+.vscode/
+.history/
+
+# MacOS related
+*.DS_Store
+
+# Windows related
+Thumbs.db
+
+# Android related
+local.properties
+android/.gradle/
+android/app/build/
+android/local.properties
+android/.idea/
+
+# iOS related
+ios/Pods/
+ios/.symlinks/
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+ios/Runner.xcworkspace/
+ios/build/
+ios/.generated/
+
+# Xcode related
+xcuserdata/
+*.xcworkspace
+*.xcuserstate
+
+# Generated files
+*.log
+*.lock
