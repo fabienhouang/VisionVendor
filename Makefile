@@ -1,7 +1,15 @@
-run web:
+
+run:
+	flutter run --no-build
+
+run-web:
 	flutter run -d web-server
 
-run mobile:
+build:
+	flutter build --release
+
+install:
+	flutter install
 
 get-pack:
 	flutter packages get
