@@ -1,7 +1,7 @@
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 
-import 'camera_stream.dart';
+import 'TakePicture.dart';
 
 Future<void> main() async {
   // Ensure that plugin services are initialized so that `availableCameras()`
