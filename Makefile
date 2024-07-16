@@ -1,6 +1,6 @@
 
 run:
-	flutter run --no-build
+	flutter run --no-build --dart-define=API_KEY=${GOOGLE_API_KEY}
 
 run-web:
 	flutter run -d web-server
@@ -19,3 +19,9 @@ upgrade-pack:
 
 doctor:
 	flutter doctor
+
+adb:
+	adb connect 192.168.1.28:44783
+
+all:
+	flutter run --dart-define=API_KEY=${GOOGLE_API_KEY}

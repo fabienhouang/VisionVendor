@@ -1,0 +1,13 @@
+{
+    "configurations": [
+        {
+            "name": "Flutter",
+            "request": "launch",
+            "type": "dart",
+            "toolArgs": [
+                "--dart-define",
+                "API_KEY=$GOOGLE_API_KEY"
+            ]
+        }
+    ]
+}
