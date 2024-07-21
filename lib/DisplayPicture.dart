@@ -18,7 +18,6 @@ class DisplayPictureScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(title: const Text('Item Description')),
       // The image is stored as a file on the device. Use the `Image.file`
@@ -29,23 +28,22 @@ class DisplayPictureScreen extends StatelessWidget {
           if (snapshot.connectionState == ConnectionState.done) {
             // If the Future is complete, display the preview.
             return Column(
-                children: <Widget> [
-                  Container(
-                    margin: const EdgeInsets.all(10.0),
-                    width: 400.0,
-                    height: 400.0,
-                    child: Image.file(File(imagePath)),
-                  ),
+              children: <Widget>[
+                Container(
+                  margin: const EdgeInsets.all(10.0),
+                  width: 400.0,
+                  height: 400.0,
+                  child: Image.file(File(imagePath)),
+                ),
 
                 ListView.builder(
-                  scrollDirection: Axis.vertical,
-                  shrinkWrap: true,
-                  itemCount: _res.length,
-                  itemBuilder: (BuildContext context, int index) {
-                    String key = _res.keys.elementAt(index);
-                    return Text(key + " : " + (_res[key]!.toString()));
-                  }
-                ),
+                    scrollDirection: Axis.vertical,
+                    shrinkWrap: true,
+                    itemCount: _res.length,
+                    itemBuilder: (BuildContext context, int index) {
+                      String key = _res.keys.elementAt(index);
+                      return Text("$key : ${_res[key]!}");
+                    }),
                 //Text(_res.length.toString())
               ],
             );
@@ -59,18 +57,16 @@ class DisplayPictureScreen extends StatelessWidget {
   }
 
   Future<void> _sendImagePrompt(String imagePath) async {
+    final imageBytes = await File(imagePath).readAsBytes();
+    final content = [
+      Content.multi([
+        TextPart(prompt),
+        // The only accepted mime types are image/*.
+        DataPart('image/*', imageBytes.buffer.asUint8List())
+      ])
+    ];
 
-      final imageBytes = await File(imagePath).readAsBytes();
-      final content = [
-        Content.multi([
-          TextPart(prompt),
-          // The only accepted mime types are image/*.
-          DataPart('image/*', imageBytes.buffer.asUint8List())
-        ])
-      ];
-
-      var response = await model.generateContent(content);
-      _res = jsonDecode(response.text!) as Map<String, dynamic>;
-
+    var response = await model.generateContent(content);
+    _res = jsonDecode(response.text!) as Map<String, dynamic>;
   }
 }
