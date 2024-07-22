@@ -1,5 +1,3 @@
-library model;
-
 import 'package:google_generative_ai/google_generative_ai.dart';
 
 const _instruction =
