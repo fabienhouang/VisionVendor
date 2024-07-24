@@ -141,11 +141,11 @@ class TakePictureScreenState extends State<TakePictureScreen> {
                             );
                           }
                         ),
-                        title: Text(res["Description"]),
+                        title: Text(res["Title"]),
                         subtitle: Row(
                           children: <Widget>[
                             Text("Retail Price:" + res["Retail Price"]),
-                            Text(", \tResell Price:" + res["Lowest Resell"] + '-' + res["Average Resell"]),
+                            Text(", \tResale Price:" + res["Lowest Resale"] + '-' + res["Average Resale"]),
                           ]
                         ),
                       ),
@@ -159,7 +159,7 @@ class TakePictureScreenState extends State<TakePictureScreen> {
       ]),
       floatingActionButton: FloatingActionButton(
         // Provide an onPressed callback.
-        onPressed: () async {
+        onPressed: _loading == 0  ? () async {
           // Take the Picture in a try / catch block. If anything goes wrong,
           // catch the error.
           try {
@@ -187,9 +187,9 @@ class TakePictureScreenState extends State<TakePictureScreen> {
             );
           } catch (e) {
             // If an error occurs, log the error to the console.
-            print(e);
+            _showError(e.toString());
           }
-        },
+        } : null,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -207,22 +207,60 @@ class TakePictureScreenState extends State<TakePictureScreen> {
     setState(() {
       _loading += 1;
     });
-    final imageBytes = await File(imagePath).readAsBytes();
-    final content = [
-      Content.multi([
-        TextPart(prompt),
-        // The only accepted mime types are image/*.
-        DataPart('image/*', imageBytes.buffer.asUint8List())
-      ])
-    ];
 
-    var response = await model.generateContent(content);
-    var res = jsonDecode(response.text!) as Map<String, dynamic>;
-    res["imagePath"] = imagePath;
+    try {
+      final imageBytes = await File(imagePath).readAsBytes();
+      final content = [
+        Content.multi([
+          TextPart(prompt),
+          // The only accepted mime types are image/*.
+          DataPart('image/*', imageBytes.buffer.asUint8List())
+        ])
+      ];
 
-    setState(() {
-      results.add(res);
-      _loading -= 1;
-    });
+      var response = await model.generateContent(content);
+
+      if (response == null) {
+        _showError('No response from API.');
+        return;
+      }
+
+      var res = jsonDecode(response.text!) as Map<String, dynamic>;
+      res["imagePath"] = imagePath;
+
+      setState(() {
+        results.add(res);
+      });
+
+    } catch (e) {
+      _showError(e.toString());
+    } finally {
+      setState(() {
+        _loading -= 1;
+      });
+    }
+  }
+
+
+  void _showError(String message) {
+    showDialog<void>(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: const Text('Something went wrong'),
+          content: SingleChildScrollView(
+            child: SelectableText(message),
+          ),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: const Text('OK'),
+            )
+          ],
+        );
+      },
+    );
   }
 }

@@ -1,11 +1,12 @@
 import 'package:google_generative_ai/google_generative_ai.dart';
 
 const _instruction =
-    """you're used as the backend of our application called Vision Vendor where the goal is to estimate goods state, price, condition ...
-You're main task is to analyze images and make some KPIs out of it""";
+    """You're used as the backend of our application called Vision Vendor where the goal is to estimate goods state, price, condition ...
+Your main task is to analyze images and make some KPIs to help us appraise items for resale""";
 
 var prompt =
-    """I need to analyze this image to extract important information for the resale of an item for my application.
+    """I need to analyze this image to extract important information for the resale of an item.
+The item to be appraised in located in the center of the image.
 Try to find a title that best matches the item for sale.
 Even if the price estimation or other KPIs (in dollars adding \$ at the beginning) are not accurate, it's okay, I just need an indicative figure.""";
 
@@ -14,32 +15,37 @@ const String _apiKey = String.fromEnvironment('API_KEY');
 
 // Define the properties of the KPI object
 Map<String, Schema> kpiProperties = {
+  'Title' : Schema(
+    SchemaType.string,
+    description:
+        'Short title of the item, dont be too exhaustive, use a maximum of 10 words for the title of the item that needs to be sold',
+  ),
   'Description': Schema(
     SchemaType.string,
     description:
-        'Description of the item, dont be too exhaustive, just make a description of the object that needs to be sell',
+        'Description of the item, just make a description of the object that needs to be sold',
   ),
   'Brand': Schema(
     SchemaType.string,
-    description: 'Brand of the detected object',
+    description: 'Brand of the detected item',
   ),
   'Materials': Schema(
     SchemaType.string,
-    description: 'Materials of the object',
+    description: 'Materials of the item',
   ),
   'Colors': Schema(
     SchemaType.string,
     description:
-        'Colors of the detected object, can be plurial and separated by comma',
+        'Colors of the detected item, can have multiple and separated by comma',
   ),
   'Weight': Schema(
     SchemaType.string,
     description:
-        'Estimation of the weight of the detected object and add the units at the end of the number',
+        'Estimation of the weight of the detected item and add the units at the end of the number, in kg',
   ),
   'Object Category': Schema(
     SchemaType.string,
-    description: 'Category of the detected object',
+    description: 'Category of the detected item',
   ),
   'Condition': Schema(
     SchemaType.string,
@@ -48,19 +54,19 @@ Map<String, Schema> kpiProperties = {
   ),
   'Retail Price': Schema(
     SchemaType.string,
-    description: 'Retail price of the item',
+    description: 'Retail price of the item in dollars',
   ),
-  'Average Resell': Schema(
+  'Average Resale': Schema(
     SchemaType.string,
-    description: 'Average resell price of the item',
+    description: 'Average resale price of the item in dollars',
   ),
-  'Highest Resell': Schema(
+  'Highest Resale': Schema(
     SchemaType.string,
-    description: 'Highest resell price of the item',
+    description: 'Highest resale price of the item in dollars',
   ),
-  'Lowest Resell': Schema(
+  'Lowest Resale': Schema(
     SchemaType.string,
-    description: 'Lowest resell price of the item',
+    description: 'Lowest resale price of the item in dollars',
   ),
 };
 
@@ -68,6 +74,7 @@ Map<String, Schema> kpiProperties = {
 Schema kpiSchema = Schema.object(
   properties: kpiProperties,
   requiredProperties: [
+    'Title',
     'Description',
     'Brand',
     'Materials',
@@ -76,9 +83,9 @@ Schema kpiSchema = Schema.object(
     'Object Category',
     'Condition',
     'Retail Price',
-    'Average Resell',
-    'Highest Resell',
-    'Lowest Resell'
+    'Average Resale',
+    'Highest Resale',
+    'Lowest Resale'
   ],
   description: 'Schema for the KPI object returned by the analysis',
 );
