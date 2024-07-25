@@ -6,12 +6,12 @@ import 'package:google_generative_ai/google_generative_ai.dart';
 
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 import 'DisplayPicture.dart';
 //import 'BottomHistorySheet.dart';
 
 import 'global/model.dart';
+import 'package:image_picker/image_picker.dart';
 
 // A screen that allows users to take a picture using a given camera.
 class TakePictureScreen extends StatefulWidget {
@@ -31,6 +31,7 @@ class TakePictureScreenState extends State<TakePictureScreen> {
   late Future<void> _initializeControllerFuture;
   List<Map<String, dynamic>> results = [Map<String, dynamic>()];
   int _loading = 0;
+  var isCamera = false;
 
   @override
   void initState() {
@@ -157,48 +158,70 @@ class TakePictureScreenState extends State<TakePictureScreen> {
           }
         )
       ]),
-      floatingActionButton: FloatingActionButton(
-        // Provide an onPressed callback.
-        onPressed: _loading == 0  ? () async {
-          // Take the Picture in a try / catch block. If anything goes wrong,
-          // catch the error.
-          try {
-            // Ensure that the camera is initialized.
-            await _initializeControllerFuture;
-
-            // Attempt to take a picture and get the file `image`
-            // where it was saved.
-            final image = await _controller.takePicture();
-
-            if (!context.mounted) return;
-
-            await _sendImagePrompt(image.path);
-
-            // If the picture was taken, display it on a new screen.
-            await Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (context) => DisplayPictureScreen(
-                  // Pass the automatically generated path to
-                  // the DisplayPictureScreen widget.
-                  imagePath: image.path,
-                  res: results[results.length-1]
-                ),
-              ),
-            );
-          } catch (e) {
-            // If an error occurs, log the error to the console.
-            _showError(e.toString());
-          }
-        } : null,
+      floatingActionButton: Padding(
+        padding: const EdgeInsets.only(left: 35),
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.end,
           children: [
-            if (_loading == 0)
-              const Icon(Icons.camera_alt)
-            else
-              const CircularProgressIndicator(),
-          ]
-        )
+            FloatingActionButton(
+              onPressed: _loading == 0 ? () async {
+                isCamera = false;
+                final ImagePicker _picker = ImagePicker();
+                final XFile? image = await _picker.pickImage(source: ImageSource.gallery);
+                if (image != null) {
+                  await _handleImage(image.path);
+                } else {
+                  _showError('No image selected.');
+                }
+              } : null,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  if (_loading > 0 && !isCamera) const CircularProgressIndicator() else const Icon(Icons.add_photo_alternate),
+                ],
+              ),
+            ),
+            Expanded(child: Container()),
+            FloatingActionButton(
+              onPressed: _loading == 0 ? () async {
+                try {
+                  isCamera = true;
+                  // Attempt to take a picture and get the file `image`
+                  // where it was saved.
+                  await _initializeControllerFuture;
+
+                  // Attempt to take a picture and get the file `image`
+                  // where it was saved.
+                  final image = await _controller.takePicture();
+
+                  if (!context.mounted) return;
+                  await _handleImage(image.path);
+                } 
+                catch (e) {
+                  _showError(e.toString());
+                }
+              } : null,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  if (_loading > 0 && isCamera ) const CircularProgressIndicator() else const Icon(Icons.camera_alt) ,
+                ],
+              ),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+
+  Future<void> _handleImage(String imagePath) async {
+  await _sendImagePrompt(imagePath);
+  await Navigator.of(context).push(
+    MaterialPageRoute(
+      builder: (context) => DisplayPictureScreen(
+        imagePath: imagePath,
+        res: results[results.length - 1],
+        ),
       ),
     );
   }
