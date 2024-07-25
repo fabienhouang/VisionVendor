@@ -31,7 +31,7 @@ class TakePictureScreenState extends State<TakePictureScreen> {
   late Future<void> _initializeControllerFuture;
   List<Map<String, dynamic>> results = [Map<String, dynamic>()];
   int _loading = 0;
-  var isCamera = false;
+  bool isCamera = false;
 
   @override
   void initState() {
