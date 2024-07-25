@@ -16,18 +16,7 @@ Future<void> main() async {
 
   runApp(
     MaterialApp(
-      theme: ThemeData(
-          colorScheme: ColorScheme.fromSwatch(
-            primarySwatch: Colors.orange,
-          ),
-          // scaffoldBackgroundColor: Colors.orange[100],
-          appBarTheme: AppBarTheme(
-            backgroundColor: Colors.amber,
-            titleTextStyle: TextStyle(fontSize: 25, color: Colors.blueAccent),
-            centerTitle: true,
-            // toolbarHeight: 40,
-          ),
-          useMaterial3: true),
+      theme: ThemeData.light(),
       darkTheme: ThemeData.dark(),
       home: TakePictureScreen(
         // Pass the appropriate camera to the TakePictureScreen widget.

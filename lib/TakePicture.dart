@@ -151,25 +151,6 @@ class TakePictureScreenState extends State<TakePictureScreen> {
                                     res["Average Resale"]),
                               ]),
                             ),
-//                             ListTile(
-//   contentPadding: EdgeInsets.symmetric(vertical: 0.0, horizontal: 5.0),
-//   visualDensity: VisualDensity(vertical: 4),
-//   dense: true,
-//   leading: LayoutBuilder(
-//     builder: (BuildContext context, BoxConstraints constraints) {
-//       return SizedBox(
-//         height: constraints.maxHeight,
-//         width: constraints.maxWidth / 5,
-//         child: Image.file(
-//           File(res["imagePath"]),
-//           fit: BoxFit.cover,
-//         ),
-//       );
-//     },
-//   ),
-//   title: Text(res["Title"]),
-//   subtitle: buildSubtitle(res),
-// ),
                           ));
                     },
                   ));
