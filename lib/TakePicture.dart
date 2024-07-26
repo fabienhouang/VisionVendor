@@ -67,18 +67,25 @@ class TakePictureScreenState extends State<TakePictureScreen> {
       // camera preview. Use a FutureBuilder to display a loading spinner until the
       // controller has finished initializing.
       body: Stack(children: [
-        FutureBuilder<void>(
-          future: _initializeControllerFuture,
-          builder: (context, snapshot) {
-            if (snapshot.connectionState == ConnectionState.done) {
-              // If the Future is complete, display the preview.
-              return CameraPreview(_controller);
-            } else {
-              // Otherwise, display a loading indicator.
-              return const Center(child: CircularProgressIndicator());
-            }
-          },
-        ),
+        Row(children: [
+          Expanded(
+            child: Container(
+              padding: const EdgeInsets.symmetric(horizontal: 10.0),
+              child: FutureBuilder<void>(
+                future: _initializeControllerFuture,
+                builder: (context, snapshot) {
+                  if (snapshot.connectionState == ConnectionState.done) {
+                    // If the Future is complete, display the preview.
+                    return CameraPreview(_controller);
+                  } else {
+                    // Otherwise, display a loading indicator.
+                    return const Center(child: CircularProgressIndicator());
+                  }
+                },
+              ),
+            ),
+          ),
+        ]),
         DraggableScrollableSheet(
           initialChildSize: 0.05,
           minChildSize: 0.05,
@@ -142,11 +149,11 @@ class TakePictureScreenState extends State<TakePictureScreen> {
                             );
                           }
                         ),
-                        title: Text(res["Title"]),
+                        title: Text(res["title"]),
                         subtitle: Row(
                           children: <Widget>[
-                            Text("Retail Price:" + res["Retail Price"]),
-                            Text(", \tResale Price:" + res["Lowest Resale"] + '-' + res["Average Resale"]),
+                            Text("Retail Price:" + res["retail_price"]),
+                            Text(", \tResale Price:" + res["min_resale"] + '-' + res["avg_resale"]),
                           ]
                         ),
                       ),
@@ -158,69 +165,73 @@ class TakePictureScreenState extends State<TakePictureScreen> {
           }
         )
       ]),
-      floatingActionButton: Padding(
-        padding: const EdgeInsets.only(left: 35),
+      floatingActionButton: Container(
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
-            FloatingActionButton(
-              onPressed: _loading == 0 ? () async {
-                isCamera = false;
-                final ImagePicker _picker = ImagePicker();
-                final XFile? image = await _picker.pickImage(source: ImageSource.gallery);
-                if (image != null) {
-                  await _handleImage(image.path);
-                } else {
-                  _showError('No image selected.');
-                }
-              } : null,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  if (_loading > 0 && !isCamera) const CircularProgressIndicator() else const Icon(Icons.add_photo_alternate),
-                ],
+            Container(
+              padding: EdgeInsets.only(left: 35),
+              child: FloatingActionButton(
+                onPressed: _loading == 0 ? () async {
+                  isCamera = false;
+                  final ImagePicker _picker = ImagePicker();
+                  final XFile? image = await _picker.pickImage(source: ImageSource.gallery);
+                  if (image != null) {
+                    await _handleImage(image.path);
+                  } else {
+                    _showError('No image selected.');
+                  }
+                } : null,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    if (_loading > 0 && !isCamera) const CircularProgressIndicator() else const Icon(Icons.add_photo_alternate),
+                  ],
+                ),
               ),
             ),
             Expanded(child: Container()),
-            FloatingActionButton(
-              onPressed: _loading == 0 ? () async {
-                try {
-                  isCamera = true;
-                  // Attempt to take a picture and get the file `image`
-                  // where it was saved.
-                  await _initializeControllerFuture;
+            Container(
+              child: FloatingActionButton(
+                onPressed: _loading == 0 ? () async {
+                  try {
+                    isCamera = true;
+                    // Attempt to take a picture and get the file `image`
+                    // where it was saved.
+                    await _initializeControllerFuture;
 
-                  // Attempt to take a picture and get the file `image`
-                  // where it was saved.
-                  final image = await _controller.takePicture();
+                    // Attempt to take a picture and get the file `image`
+                    // where it was saved.
+                    final image = await _controller.takePicture();
 
-                  if (!context.mounted) return;
-                  await _handleImage(image.path);
-                } 
-                catch (e) {
-                  _showError(e.toString());
-                }
-              } : null,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  if (_loading > 0 && isCamera ) const CircularProgressIndicator() else const Icon(Icons.camera_alt) ,
-                ],
-              ),
+                    if (!context.mounted) return;
+                    await _handleImage(image.path);
+                  }
+                  catch (e) {
+                    _showError(e.toString());
+                  }
+                } : null,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    if (_loading > 0 && isCamera ) const CircularProgressIndicator() else const Icon(Icons.camera_alt) ,
+                  ],
+                ),
+              )
             )
           ],
         ),
-      ),
+      )
     );
   }
 
   Future<void> _handleImage(String imagePath) async {
-  await _sendImagePrompt(imagePath);
-  await Navigator.of(context).push(
-    MaterialPageRoute(
-      builder: (context) => DisplayPictureScreen(
-        imagePath: imagePath,
-        res: results[results.length - 1],
+    await _sendImagePrompt(imagePath);
+    await Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) => DisplayPictureScreen(
+          imagePath: imagePath,
+          res: results[results.length - 1],
         ),
       ),
     );
@@ -263,7 +274,6 @@ class TakePictureScreenState extends State<TakePictureScreen> {
       });
     }
   }
-
 
   void _showError(String message) {
     showDialog<void>(

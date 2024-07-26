@@ -15,56 +15,56 @@ const String _apiKey = String.fromEnvironment('API_KEY');
 
 // Define the properties of the KPI object
 Map<String, Schema> kpiProperties = {
-  'Title' : Schema(
+  'title' : Schema(
     SchemaType.string,
     description:
         'Short title of the item, dont be too exhaustive, use a maximum of 10 words for the title of the item that needs to be sold',
   ),
-  'Description': Schema(
+  'description': Schema(
     SchemaType.string,
     description:
         'Description of the item, just make a description of the object that needs to be sold',
   ),
-  'Brand': Schema(
+  'brand': Schema(
     SchemaType.string,
     description: 'Brand of the detected item',
   ),
-  'Materials': Schema(
+  'materials': Schema(
     SchemaType.string,
     description: 'Materials of the item',
   ),
-  'Colors': Schema(
+  'colors': Schema(
     SchemaType.string,
     description:
         'Colors of the detected item, can have multiple and separated by comma',
   ),
-  'Weight': Schema(
+  'weight': Schema(
     SchemaType.string,
     description:
         'Estimation of the weight of the detected item and add the units at the end of the number, in kg',
   ),
-  'Object Category': Schema(
+  'category': Schema(
     SchemaType.string,
     description: 'Category of the detected item',
   ),
-  'Condition': Schema(
+  'condition': Schema(
     SchemaType.string,
     description: 'Condition of the item',
-    enumValues: ['New', 'Excellent', 'Very Good', 'Good', 'Used', 'Damaged'],
+    enumValues: ['New', 'Excellent', 'Good', 'Used', 'Damaged'],
   ),
-  'Retail Price': Schema(
+  'retail_price': Schema(
     SchemaType.string,
     description: 'Retail price of the item in dollars',
   ),
-  'Average Resale': Schema(
+  'avg_resale': Schema(
     SchemaType.string,
     description: 'Average resale price of the item in dollars',
   ),
-  'Highest Resale': Schema(
+  'max_resale': Schema(
     SchemaType.string,
     description: 'Highest resale price of the item in dollars',
   ),
-  'Lowest Resale': Schema(
+  'min_resale': Schema(
     SchemaType.string,
     description: 'Lowest resale price of the item in dollars',
   ),
@@ -74,18 +74,18 @@ Map<String, Schema> kpiProperties = {
 Schema kpiSchema = Schema.object(
   properties: kpiProperties,
   requiredProperties: [
-    'Title',
-    'Description',
-    'Brand',
-    'Materials',
-    'Colors',
-    'Weight',
-    'Object Category',
-    'Condition',
-    'Retail Price',
-    'Average Resale',
-    'Highest Resale',
-    'Lowest Resale'
+    'title',
+    'description',
+    'brand',
+    'materials',
+    'colors',
+    'weight',
+    'category',
+    'condition',
+    'retail_price',
+    'avg_resale',
+    'max_resale',
+    'min_resale'
   ],
   description: 'Schema for the KPI object returned by the analysis',
 );
