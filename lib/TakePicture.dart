@@ -92,7 +92,7 @@ class TakePictureScreenState extends State<TakePictureScreen> {
           maxChildSize: 1,
           snapSizes: [0.05, 1],
           snap: true,
-          builder: (BuildContext context, ScrollController scrollSheetController ) {
+          builder: (BuildContext context, ScrollController scrollSheetController) {
             return Container(
               color: Colors.black,
               child: ListView.builder(

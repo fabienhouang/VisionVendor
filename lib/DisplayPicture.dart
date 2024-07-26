@@ -1,13 +1,6 @@
-import 'dart:async';
 import 'dart:io';
-import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-
-import 'package:google_generative_ai/google_generative_ai.dart';
-
-import 'global/model.dart';
 
 // A widget that displays the picture taken by the user.
 class DisplayPictureScreen extends StatelessWidget {
@@ -31,7 +24,8 @@ class DisplayPictureScreen extends StatelessWidget {
       // The image is stored as a file on the device. Use the `Image.file`
       // constructor with the given path to display the image.
       body: SingleChildScrollView(
-        child: Container(
+        child: SelectionArea(
+          child: Container(
           padding: const EdgeInsets.all(20.0),
           child: Column(
             children: <Widget>[
@@ -138,6 +132,11 @@ class DisplayPictureScreen extends StatelessWidget {
                             title: Text('Weight'),
                             subtitle: Text(res['weight']),
                           ),
+                          ListTile(
+                            leading: Icon(Icons.link,),
+                            title: Text('Link'),
+                            subtitle: Text(res['link']),
+                          ),
                         ],
                       ),
                     )
@@ -155,6 +154,7 @@ class DisplayPictureScreen extends StatelessWidget {
               ),*/
               //Text(res.length.toString())
             ],
+          )
           )
         )
       )

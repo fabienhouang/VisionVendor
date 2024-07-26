@@ -68,6 +68,10 @@ Map<String, Schema> kpiProperties = {
     SchemaType.string,
     description: 'Lowest resale price of the item in dollars',
   ),
+  'link': Schema(
+    SchemaType.string,
+    description: 'One link where I can find this item',
+  ),
 };
 
 // Create the KPI schema object
@@ -85,7 +89,8 @@ Schema kpiSchema = Schema.object(
     'retail_price',
     'avg_resale',
     'max_resale',
-    'min_resale'
+    'min_resale',
+    'link'
   ],
   description: 'Schema for the KPI object returned by the analysis',
 );
