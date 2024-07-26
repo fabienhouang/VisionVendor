@@ -93,7 +93,7 @@ class DisplayPictureScreen extends StatelessWidget {
               ),
               Text(
                 res['description'],
-                style: TextStyle(fontSize: 12),
+                style: TextStyle(fontSize: 14),
               ),
               SizedBox(height: 12),
               Divider(),
