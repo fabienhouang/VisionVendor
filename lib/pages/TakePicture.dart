@@ -64,8 +64,13 @@ class TakePictureScreenState extends State<TakePictureScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Vision Vendor'),
-      ),
+        title: const Text('Vision Vendor',
+                          style: TextStyle(
+                          fontFamily: 'Forte',
+                          fontSize: 28,
+                        ),
+                      ),
+                    ),
       // You must wait until the controller is initialized before displaying the
       // camera preview. Use a FutureBuilder to display a loading spinner until the
       // controller has finished initializing.
@@ -108,10 +113,11 @@ class TakePictureScreenState extends State<TakePictureScreen> {
                     showError(context, 'No image selected.');
                   }
                 } : null,
+                foregroundColor: Color(0xFF4169E1),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    if (_loading > 0 && !isCamera) const CircularProgressIndicator() else const Icon(Icons.add_photo_alternate),
+                    if (_loading > 0 && !isCamera) const CircularProgressIndicator(color: Color(0xFF4169E1),strokeWidth: 2.0) else const Icon(Icons.add_photo_alternate),
                   ],
                 ),
               ),
@@ -137,10 +143,11 @@ class TakePictureScreenState extends State<TakePictureScreen> {
                     showError(context, e.toString());
                   }
                 } : null,
+                foregroundColor: Color(0xFF4169E1),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    if (_loading > 0 && isCamera ) const CircularProgressIndicator() else const Icon(Icons.camera_alt) ,
+                    if (_loading > 0 && isCamera ) const CircularProgressIndicator(color:Color(0xFF4169E1), strokeWidth: 2.0,) else const Icon(Icons.camera_alt) ,
                   ],
                 ),
               )
