@@ -4,15 +4,14 @@ import 'package:flutter/material.dart';
 
 // A widget that displays the picture taken by the user.
 class DisplayPictureScreen extends StatelessWidget {
-  final String imagePath;
   final Map<String, dynamic> res;
 
-  DisplayPictureScreen({super.key, required this.imagePath, required this.res});
+  DisplayPictureScreen({super.key, required this.res});
 
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width;
-    double height = MediaQuery.of(context).size.height;
+    final double width = MediaQuery.of(context).size.width;
+    final double height = MediaQuery.of(context).size.height;
 
     return Scaffold(
       appBar: AppBar(
@@ -40,7 +39,7 @@ class DisplayPictureScreen extends StatelessWidget {
                       height: height/4,
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(20.0),
-                        child: Image.file(File(imagePath), fit: BoxFit.cover),
+                        child: Image.file(File(res['imagePath']), fit: BoxFit.cover),
                       )
                     ),
                   ),
