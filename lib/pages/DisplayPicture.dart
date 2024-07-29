@@ -17,7 +17,9 @@ class DisplayPictureScreen extends StatelessWidget {
       appBar: AppBar(
         title: FittedBox(
           fit: BoxFit.fitWidth,
-          child: Text("Item Description")
+          child: Text("Item Description", 
+                style: TextStyle(fontWeight: FontWeight.bold),
+           ),
         )
       ),
       // The image is stored as a file on the device. Use the `Image.file`

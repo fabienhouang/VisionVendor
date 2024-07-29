@@ -1,0 +1,1138 @@
+===== DIRECTORY: ./.dart_tool =====
+===== DIRECTORY: ./.dart_tool/dartpad =====
+===== START OF ./.dart_tool/dartpad/web_plugin_registrant.dart =====
+// Flutter web plugin registrant file.
+//
+// Generated file. Do not edit.
+//
+
+// @dart = 2.13
+// ignore_for_file: type=lint
+
+import 'package:camera_web/camera_web.dart';
+import 'package:image_picker_for_web/image_picker_for_web.dart';
+import 'package:flutter_web_plugins/flutter_web_plugins.dart';
+
+void registerPlugins([final Registrar? pluginRegistrar]) {
+  final Registrar registrar = pluginRegistrar ?? webPluginRegistrar;
+  CameraPlugin.registerWith(registrar);
+  ImagePickerPlugin.registerWith(registrar);
+  registrar.registerMessageHandler();
+}
+
+===== END OF ./.dart_tool/dartpad/web_plugin_registrant.dart =====
+
+===== DIRECTORY: ./.dart_tool/flutter_build =====
+===== DIRECTORY: ./.dart_tool/flutter_build/89fc2cb5f157dd6cd10157c724c3c2af =====
+===== START OF ./.dart_tool/flutter_build/dart_plugin_registrant.dart =====
+//
+// Generated file. Do not edit.
+// This file is generated from template in file `flutter_tools/lib/src/flutter_plugins.dart`.
+//
+
+// @dart = 3.1
+
+import 'dart:io'; // flutter_ignore: dart_io_import.
+import 'package:camera_android_camerax/camera_android_camerax.dart';
+import 'package:image_picker_android/image_picker_android.dart';
+import 'package:path_provider_android/path_provider_android.dart';
+import 'package:camera_avfoundation/camera_avfoundation.dart';
+import 'package:image_picker_ios/image_picker_ios.dart';
+import 'package:path_provider_foundation/path_provider_foundation.dart';
+import 'package:file_selector_linux/file_selector_linux.dart';
+import 'package:image_picker_linux/image_picker_linux.dart';
+import 'package:path_provider_linux/path_provider_linux.dart';
+import 'package:file_selector_macos/file_selector_macos.dart';
+import 'package:image_picker_macos/image_picker_macos.dart';
+import 'package:path_provider_foundation/path_provider_foundation.dart';
+import 'package:file_selector_windows/file_selector_windows.dart';
+import 'package:image_picker_windows/image_picker_windows.dart';
+import 'package:path_provider_windows/path_provider_windows.dart';
+
+@pragma('vm:entry-point')
+class _PluginRegistrant {
+
+  @pragma('vm:entry-point')
+  static void register() {
+    if (Platform.isAndroid) {
+      try {
+        AndroidCameraCameraX.registerWith();
+      } catch (err) {
+        print(
+          '`camera_android_camerax` threw an error: $err. '
+          'The app may not function as expected until you remove this plugin from pubspec.yaml'
+        );
+      }
+
+      try {
+        ImagePickerAndroid.registerWith();
+      } catch (err) {
+        print(
+          '`image_picker_android` threw an error: $err. '
+          'The app may not function as expected until you remove this plugin from pubspec.yaml'
+        );
+      }
+
+      try {
+        PathProviderAndroid.registerWith();
+      } catch (err) {
+        print(
+          '`path_provider_android` threw an error: $err. '
+          'The app may not function as expected until you remove this plugin from pubspec.yaml'
+        );
+      }
+
+    } else if (Platform.isIOS) {
+      try {
+        AVFoundationCamera.registerWith();
+      } catch (err) {
+        print(
+          '`camera_avfoundation` threw an error: $err. '
+          'The app may not function as expected until you remove this plugin from pubspec.yaml'
+        );
+      }
+
+      try {
+        ImagePickerIOS.registerWith();
+      } catch (err) {
+        print(
+          '`image_picker_ios` threw an error: $err. '
+          'The app may not function as expected until you remove this plugin from pubspec.yaml'
+        );
+      }
+
+      try {
+        PathProviderFoundation.registerWith();
+      } catch (err) {
+        print(
+          '`path_provider_foundation` threw an error: $err. '
+          'The app may not function as expected until you remove this plugin from pubspec.yaml'
+        );
+      }
+
+    } else if (Platform.isLinux) {
+      try {
+        FileSelectorLinux.registerWith();
+      } catch (err) {
+        print(
+          '`file_selector_linux` threw an error: $err. '
+          'The app may not function as expected until you remove this plugin from pubspec.yaml'
+        );
+      }
+
+      try {
+        ImagePickerLinux.registerWith();
+      } catch (err) {
+        print(
+          '`image_picker_linux` threw an error: $err. '
+          'The app may not function as expected until you remove this plugin from pubspec.yaml'
+        );
+      }
+
+      try {
+        PathProviderLinux.registerWith();
+      } catch (err) {
+        print(
+          '`path_provider_linux` threw an error: $err. '
+          'The app may not function as expected until you remove this plugin from pubspec.yaml'
+        );
+      }
+
+    } else if (Platform.isMacOS) {
+      try {
+        FileSelectorMacOS.registerWith();
+      } catch (err) {
+        print(
+          '`file_selector_macos` threw an error: $err. '
+          'The app may not function as expected until you remove this plugin from pubspec.yaml'
+        );
+      }
+
+      try {
+        ImagePickerMacOS.registerWith();
+      } catch (err) {
+        print(
+          '`image_picker_macos` threw an error: $err. '
+          'The app may not function as expected until you remove this plugin from pubspec.yaml'
+        );
+      }
+
+      try {
+        PathProviderFoundation.registerWith();
+      } catch (err) {
+        print(
+          '`path_provider_foundation` threw an error: $err. '
+          'The app may not function as expected until you remove this plugin from pubspec.yaml'
+        );
+      }
+
+    } else if (Platform.isWindows) {
+      try {
+        FileSelectorWindows.registerWith();
+      } catch (err) {
+        print(
+          '`file_selector_windows` threw an error: $err. '
+          'The app may not function as expected until you remove this plugin from pubspec.yaml'
+        );
+      }
+
+      try {
+        ImagePickerWindows.registerWith();
+      } catch (err) {
+        print(
+          '`image_picker_windows` threw an error: $err. '
+          'The app may not function as expected until you remove this plugin from pubspec.yaml'
+        );
+      }
+
+      try {
+        PathProviderWindows.registerWith();
+      } catch (err) {
+        print(
+          '`path_provider_windows` threw an error: $err. '
+          'The app may not function as expected until you remove this plugin from pubspec.yaml'
+        );
+      }
+
+    }
+  }
+}
+
+===== END OF ./.dart_tool/flutter_build/dart_plugin_registrant.dart =====
+
+===== DIRECTORY: ./.git =====
+===== DIRECTORY: ./.git/hooks =====
+===== DIRECTORY: ./.git/info =====
+===== DIRECTORY: ./.git/logs =====
+===== DIRECTORY: ./.git/logs/refs =====
+===== DIRECTORY: ./.git/logs/refs/heads =====
+===== DIRECTORY: ./.git/logs/refs/heads/feature =====
+===== DIRECTORY: ./.git/logs/refs/remotes =====
+===== DIRECTORY: ./.git/logs/refs/remotes/origin =====
+===== DIRECTORY: ./.git/logs/refs/remotes/origin/feature =====
+===== DIRECTORY: ./.git/objects =====
+===== DIRECTORY: ./.git/objects/02 =====
+===== DIRECTORY: ./.git/objects/04 =====
+===== DIRECTORY: ./.git/objects/06 =====
+===== DIRECTORY: ./.git/objects/08 =====
+===== DIRECTORY: ./.git/objects/09 =====
+===== DIRECTORY: ./.git/objects/0a =====
+===== DIRECTORY: ./.git/objects/0b =====
+===== DIRECTORY: ./.git/objects/0d =====
+===== DIRECTORY: ./.git/objects/0e =====
+===== DIRECTORY: ./.git/objects/0f =====
+===== DIRECTORY: ./.git/objects/10 =====
+===== DIRECTORY: ./.git/objects/11 =====
+===== DIRECTORY: ./.git/objects/12 =====
+===== DIRECTORY: ./.git/objects/13 =====
+===== DIRECTORY: ./.git/objects/14 =====
+===== DIRECTORY: ./.git/objects/16 =====
+===== DIRECTORY: ./.git/objects/17 =====
+===== DIRECTORY: ./.git/objects/19 =====
+===== DIRECTORY: ./.git/objects/1b =====
+===== DIRECTORY: ./.git/objects/1c =====
+===== DIRECTORY: ./.git/objects/1e =====
+===== DIRECTORY: ./.git/objects/1f =====
+===== DIRECTORY: ./.git/objects/22 =====
+===== DIRECTORY: ./.git/objects/23 =====
+===== DIRECTORY: ./.git/objects/25 =====
+===== DIRECTORY: ./.git/objects/26 =====
+===== DIRECTORY: ./.git/objects/27 =====
+===== DIRECTORY: ./.git/objects/28 =====
+===== DIRECTORY: ./.git/objects/2b =====
+===== DIRECTORY: ./.git/objects/2c =====
+===== DIRECTORY: ./.git/objects/2d =====
+===== DIRECTORY: ./.git/objects/2e =====
+===== DIRECTORY: ./.git/objects/2f =====
+===== DIRECTORY: ./.git/objects/30 =====
+===== DIRECTORY: ./.git/objects/32 =====
+===== DIRECTORY: ./.git/objects/35 =====
+===== DIRECTORY: ./.git/objects/36 =====
+===== DIRECTORY: ./.git/objects/37 =====
+===== DIRECTORY: ./.git/objects/38 =====
+===== DIRECTORY: ./.git/objects/39 =====
+===== DIRECTORY: ./.git/objects/3a =====
+===== DIRECTORY: ./.git/objects/3b =====
+===== DIRECTORY: ./.git/objects/3c =====
+===== DIRECTORY: ./.git/objects/3d =====
+===== DIRECTORY: ./.git/objects/3f =====
+===== DIRECTORY: ./.git/objects/40 =====
+===== DIRECTORY: ./.git/objects/41 =====
+===== DIRECTORY: ./.git/objects/42 =====
+===== DIRECTORY: ./.git/objects/44 =====
+===== DIRECTORY: ./.git/objects/46 =====
+===== DIRECTORY: ./.git/objects/47 =====
+===== DIRECTORY: ./.git/objects/49 =====
+===== DIRECTORY: ./.git/objects/4a =====
+===== DIRECTORY: ./.git/objects/4c =====
+===== DIRECTORY: ./.git/objects/4d =====
+===== DIRECTORY: ./.git/objects/4e =====
+===== DIRECTORY: ./.git/objects/4f =====
+===== DIRECTORY: ./.git/objects/50 =====
+===== DIRECTORY: ./.git/objects/51 =====
+===== DIRECTORY: ./.git/objects/53 =====
+===== DIRECTORY: ./.git/objects/54 =====
+===== DIRECTORY: ./.git/objects/57 =====
+===== DIRECTORY: ./.git/objects/59 =====
+===== DIRECTORY: ./.git/objects/5a =====
+===== DIRECTORY: ./.git/objects/5c =====
+===== DIRECTORY: ./.git/objects/5d =====
+===== DIRECTORY: ./.git/objects/5f =====
+===== DIRECTORY: ./.git/objects/60 =====
+===== DIRECTORY: ./.git/objects/61 =====
+===== DIRECTORY: ./.git/objects/62 =====
+===== DIRECTORY: ./.git/objects/63 =====
+===== DIRECTORY: ./.git/objects/64 =====
+===== DIRECTORY: ./.git/objects/66 =====
+===== DIRECTORY: ./.git/objects/67 =====
+===== DIRECTORY: ./.git/objects/69 =====
+===== DIRECTORY: ./.git/objects/6a =====
+===== DIRECTORY: ./.git/objects/6c =====
+===== DIRECTORY: ./.git/objects/6d =====
+===== DIRECTORY: ./.git/objects/6e =====
+===== DIRECTORY: ./.git/objects/6f =====
+===== DIRECTORY: ./.git/objects/70 =====
+===== DIRECTORY: ./.git/objects/72 =====
+===== DIRECTORY: ./.git/objects/73 =====
+===== DIRECTORY: ./.git/objects/74 =====
+===== DIRECTORY: ./.git/objects/75 =====
+===== DIRECTORY: ./.git/objects/76 =====
+===== DIRECTORY: ./.git/objects/77 =====
+===== DIRECTORY: ./.git/objects/78 =====
+===== DIRECTORY: ./.git/objects/79 =====
+===== DIRECTORY: ./.git/objects/7a =====
+===== DIRECTORY: ./.git/objects/7c =====
+===== DIRECTORY: ./.git/objects/7d =====
+===== DIRECTORY: ./.git/objects/7e =====
+===== DIRECTORY: ./.git/objects/80 =====
+===== DIRECTORY: ./.git/objects/82 =====
+===== DIRECTORY: ./.git/objects/84 =====
+===== DIRECTORY: ./.git/objects/85 =====
+===== DIRECTORY: ./.git/objects/86 =====
+===== DIRECTORY: ./.git/objects/88 =====
+===== DIRECTORY: ./.git/objects/89 =====
+===== DIRECTORY: ./.git/objects/8a =====
+===== DIRECTORY: ./.git/objects/8b =====
+===== DIRECTORY: ./.git/objects/8c =====
+===== DIRECTORY: ./.git/objects/8d =====
+===== DIRECTORY: ./.git/objects/8e =====
+===== DIRECTORY: ./.git/objects/8f =====
+===== DIRECTORY: ./.git/objects/90 =====
+===== DIRECTORY: ./.git/objects/91 =====
+===== DIRECTORY: ./.git/objects/94 =====
+===== DIRECTORY: ./.git/objects/95 =====
+===== DIRECTORY: ./.git/objects/96 =====
+===== DIRECTORY: ./.git/objects/99 =====
+===== DIRECTORY: ./.git/objects/9a =====
+===== DIRECTORY: ./.git/objects/9d =====
+===== DIRECTORY: ./.git/objects/9f =====
+===== DIRECTORY: ./.git/objects/a1 =====
+===== DIRECTORY: ./.git/objects/a2 =====
+===== DIRECTORY: ./.git/objects/a4 =====
+===== DIRECTORY: ./.git/objects/a6 =====
+===== DIRECTORY: ./.git/objects/a7 =====
+===== DIRECTORY: ./.git/objects/a8 =====
+===== DIRECTORY: ./.git/objects/a9 =====
+===== DIRECTORY: ./.git/objects/ab =====
+===== DIRECTORY: ./.git/objects/ae =====
+===== DIRECTORY: ./.git/objects/af =====
+===== DIRECTORY: ./.git/objects/b2 =====
+===== DIRECTORY: ./.git/objects/b3 =====
+===== DIRECTORY: ./.git/objects/b5 =====
+===== DIRECTORY: ./.git/objects/b6 =====
+===== DIRECTORY: ./.git/objects/b7 =====
+===== DIRECTORY: ./.git/objects/b8 =====
+===== DIRECTORY: ./.git/objects/b9 =====
+===== DIRECTORY: ./.git/objects/ba =====
+===== DIRECTORY: ./.git/objects/bc =====
+===== DIRECTORY: ./.git/objects/bd =====
+===== DIRECTORY: ./.git/objects/c0 =====
+===== DIRECTORY: ./.git/objects/c1 =====
+===== DIRECTORY: ./.git/objects/c2 =====
+===== DIRECTORY: ./.git/objects/c3 =====
+===== DIRECTORY: ./.git/objects/c8 =====
+===== DIRECTORY: ./.git/objects/cb =====
+===== DIRECTORY: ./.git/objects/cc =====
+===== DIRECTORY: ./.git/objects/ce =====
+===== DIRECTORY: ./.git/objects/d0 =====
+===== DIRECTORY: ./.git/objects/d2 =====
+===== DIRECTORY: ./.git/objects/d3 =====
+===== DIRECTORY: ./.git/objects/d4 =====
+===== DIRECTORY: ./.git/objects/d5 =====
+===== DIRECTORY: ./.git/objects/d6 =====
+===== DIRECTORY: ./.git/objects/d7 =====
+===== DIRECTORY: ./.git/objects/db =====
+===== DIRECTORY: ./.git/objects/dc =====
+===== DIRECTORY: ./.git/objects/dd =====
+===== DIRECTORY: ./.git/objects/df =====
+===== DIRECTORY: ./.git/objects/e0 =====
+===== DIRECTORY: ./.git/objects/e1 =====
+===== DIRECTORY: ./.git/objects/e3 =====
+===== DIRECTORY: ./.git/objects/e4 =====
+===== DIRECTORY: ./.git/objects/e6 =====
+===== DIRECTORY: ./.git/objects/e7 =====
+===== DIRECTORY: ./.git/objects/e8 =====
+===== DIRECTORY: ./.git/objects/e9 =====
+===== DIRECTORY: ./.git/objects/ea =====
+===== DIRECTORY: ./.git/objects/eb =====
+===== DIRECTORY: ./.git/objects/ec =====
+===== DIRECTORY: ./.git/objects/ed =====
+===== DIRECTORY: ./.git/objects/ee =====
+===== DIRECTORY: ./.git/objects/f0 =====
+===== DIRECTORY: ./.git/objects/f1 =====
+===== DIRECTORY: ./.git/objects/f2 =====
+===== DIRECTORY: ./.git/objects/f3 =====
+===== DIRECTORY: ./.git/objects/f4 =====
+===== DIRECTORY: ./.git/objects/f5 =====
+===== DIRECTORY: ./.git/objects/f6 =====
+===== DIRECTORY: ./.git/objects/f7 =====
+===== DIRECTORY: ./.git/objects/f9 =====
+===== DIRECTORY: ./.git/objects/fa =====
+===== DIRECTORY: ./.git/objects/fb =====
+===== DIRECTORY: ./.git/objects/fc =====
+===== DIRECTORY: ./.git/objects/fd =====
+===== DIRECTORY: ./.git/objects/fe =====
+===== DIRECTORY: ./.git/objects/ff =====
+===== DIRECTORY: ./.git/objects/info =====
+===== DIRECTORY: ./.git/objects/pack =====
+===== DIRECTORY: ./.git/refs =====
+===== DIRECTORY: ./.git/refs/heads =====
+===== DIRECTORY: ./.git/refs/heads/feature =====
+===== DIRECTORY: ./.git/refs/remotes =====
+===== DIRECTORY: ./.git/refs/remotes/origin =====
+===== DIRECTORY: ./.git/refs/remotes/origin/feature =====
+===== DIRECTORY: ./.git/refs/tags =====
+===== DIRECTORY: ./.vscode =====
+===== DIRECTORY: ./android =====
+===== DIRECTORY: ./android/.gradle =====
+===== DIRECTORY: ./android/.gradle/7.6.3 =====
+===== DIRECTORY: ./android/.gradle/7.6.3/checksums =====
+===== DIRECTORY: ./android/.gradle/7.6.3/dependencies-accessors =====
+===== DIRECTORY: ./android/.gradle/7.6.3/executionHistory =====
+===== DIRECTORY: ./android/.gradle/7.6.3/fileChanges =====
+===== DIRECTORY: ./android/.gradle/7.6.3/fileHashes =====
+===== DIRECTORY: ./android/.gradle/7.6.3/vcsMetadata =====
+===== DIRECTORY: ./android/.gradle/buildOutputCleanup =====
+===== DIRECTORY: ./android/.gradle/vcs-1 =====
+===== DIRECTORY: ./android/app =====
+===== DIRECTORY: ./android/app/src =====
+===== DIRECTORY: ./android/app/src/debug =====
+===== DIRECTORY: ./android/app/src/main =====
+===== DIRECTORY: ./android/app/src/main/java =====
+===== DIRECTORY: ./android/app/src/main/java/io =====
+===== DIRECTORY: ./android/app/src/main/java/io/flutter =====
+===== DIRECTORY: ./android/app/src/main/java/io/flutter/plugins =====
+===== DIRECTORY: ./android/app/src/main/kotlin =====
+===== DIRECTORY: ./android/app/src/main/kotlin/com =====
+===== DIRECTORY: ./android/app/src/main/kotlin/com/example =====
+===== DIRECTORY: ./android/app/src/main/kotlin/com/example/vision_vendor =====
+===== DIRECTORY: ./android/app/src/main/res =====
+===== DIRECTORY: ./android/app/src/main/res/drawable =====
+===== DIRECTORY: ./android/app/src/main/res/drawable-v21 =====
+===== DIRECTORY: ./android/app/src/main/res/mipmap-hdpi =====
+===== DIRECTORY: ./android/app/src/main/res/mipmap-mdpi =====
+===== DIRECTORY: ./android/app/src/main/res/mipmap-xhdpi =====
+===== DIRECTORY: ./android/app/src/main/res/mipmap-xxhdpi =====
+===== DIRECTORY: ./android/app/src/main/res/mipmap-xxxhdpi =====
+===== DIRECTORY: ./android/app/src/main/res/values =====
+===== DIRECTORY: ./android/app/src/main/res/values-night =====
+===== DIRECTORY: ./android/app/src/profile =====
+===== DIRECTORY: ./android/gradle =====
+===== DIRECTORY: ./android/gradle/wrapper =====
+===== DIRECTORY: ./assets =====
+===== DIRECTORY: ./build =====
+===== DIRECTORY: ./build/22f2fff07c50ebce4d837159fe9209df =====
+===== DIRECTORY: ./build/app =====
+===== DIRECTORY: ./build/app/generated =====
+===== DIRECTORY: ./build/app/generated/ap_generated_sources =====
+===== DIRECTORY: ./build/app/generated/ap_generated_sources/debug =====
+===== DIRECTORY: ./build/app/generated/ap_generated_sources/debug/out =====
+===== DIRECTORY: ./build/app/generated/res =====
+===== DIRECTORY: ./build/app/generated/res/pngs =====
+===== DIRECTORY: ./build/app/generated/res/pngs/debug =====
+===== DIRECTORY: ./build/app/generated/res/resValues =====
+===== DIRECTORY: ./build/app/generated/res/resValues/debug =====
+===== DIRECTORY: ./build/app/generated/source =====
+===== DIRECTORY: ./build/app/generated/source/buildConfig =====
+===== DIRECTORY: ./build/app/generated/source/buildConfig/debug =====
+===== DIRECTORY: ./build/app/generated/source/buildConfig/debug/com =====
+===== DIRECTORY: ./build/app/generated/source/buildConfig/debug/com/example =====
+===== DIRECTORY: ./build/app/generated/source/buildConfig/debug/com/example/vision_vendor =====
+===== DIRECTORY: ./build/app/intermediates =====
+===== DIRECTORY: ./build/app/intermediates/aar_metadata_check =====
+===== DIRECTORY: ./build/app/intermediates/aar_metadata_check/debug =====
+===== DIRECTORY: ./build/app/intermediates/annotation_processor_list =====
+===== DIRECTORY: ./build/app/intermediates/annotation_processor_list/debug =====
+===== DIRECTORY: ./build/app/intermediates/apk_ide_redirect_file =====
+===== DIRECTORY: ./build/app/intermediates/apk_ide_redirect_file/debug =====
+===== DIRECTORY: ./build/app/intermediates/app_metadata =====
+===== DIRECTORY: ./build/app/intermediates/app_metadata/debug =====
+===== DIRECTORY: ./build/app/intermediates/assets =====
+===== DIRECTORY: ./build/app/intermediates/assets/debug =====
+===== DIRECTORY: ./build/app/intermediates/assets/debug/flutter_assets =====
+===== DIRECTORY: ./build/app/intermediates/assets/debug/flutter_assets/fonts =====
+===== DIRECTORY: ./build/app/intermediates/assets/debug/flutter_assets/shaders =====
+===== DIRECTORY: ./build/app/intermediates/compatible_screen_manifest =====
+===== DIRECTORY: ./build/app/intermediates/compatible_screen_manifest/debug =====
+===== DIRECTORY: ./build/app/intermediates/compile_and_runtime_not_namespaced_r_class_jar =====
+===== DIRECTORY: ./build/app/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug =====
+===== DIRECTORY: ./build/app/intermediates/compressed_assets =====
+===== DIRECTORY: ./build/app/intermediates/compressed_assets/debug =====
+===== DIRECTORY: ./build/app/intermediates/compressed_assets/debug/out =====
+===== DIRECTORY: ./build/app/intermediates/compressed_assets/debug/out/assets =====
+===== DIRECTORY: ./build/app/intermediates/compressed_assets/debug/out/assets/flutter_assets =====
+===== DIRECTORY: ./build/app/intermediates/compressed_assets/debug/out/assets/flutter_assets/fonts =====
+===== DIRECTORY: ./build/app/intermediates/compressed_assets/debug/out/assets/flutter_assets/shaders =====
+===== DIRECTORY: ./build/app/intermediates/data_binding_layout_info_type_merge =====
+===== DIRECTORY: ./build/app/intermediates/data_binding_layout_info_type_merge/debug =====
+===== DIRECTORY: ./build/app/intermediates/data_binding_layout_info_type_merge/debug/out =====
+===== DIRECTORY: ./build/app/intermediates/desugar_graph =====
+===== DIRECTORY: ./build/app/intermediates/desugar_graph/debug =====
+===== DIRECTORY: ./build/app/intermediates/desugar_graph/debug/out =====
+===== DIRECTORY: ./build/app/intermediates/desugar_graph/debug/out/currentProject =====
+===== DIRECTORY: ./build/app/intermediates/desugar_graph/debug/out/currentProject/dirs_bucket_0 =====
+===== DIRECTORY: ./build/app/intermediates/desugar_graph/debug/out/currentProject/dirs_bucket_1 =====
+===== DIRECTORY: ./build/app/intermediates/desugar_graph/debug/out/currentProject/dirs_bucket_2 =====
+===== DIRECTORY: ./build/app/intermediates/desugar_graph/debug/out/currentProject/dirs_bucket_3 =====
+===== DIRECTORY: ./build/app/intermediates/desugar_graph/debug/out/currentProject/dirs_bucket_4 =====
+===== DIRECTORY: ./build/app/intermediates/desugar_graph/debug/out/currentProject/dirs_bucket_5 =====
+===== DIRECTORY: ./build/app/intermediates/desugar_graph/debug/out/currentProject/dirs_bucket_6 =====
+===== DIRECTORY: ./build/app/intermediates/desugar_graph/debug/out/currentProject/dirs_bucket_7 =====
+===== DIRECTORY: ./build/app/intermediates/desugar_graph/debug/out/currentProject/jar_35e98c1ccfd2ad877a1ad45f49e13d9095bfb60417d780a69bda9ddee51f08b5_bucket_0 =====
+===== DIRECTORY: ./build/app/intermediates/desugar_graph/debug/out/currentProject/jar_35e98c1ccfd2ad877a1ad45f49e13d9095bfb60417d780a69bda9ddee51f08b5_bucket_1 =====
+===== DIRECTORY: ./build/app/intermediates/desugar_graph/debug/out/currentProject/jar_35e98c1ccfd2ad877a1ad45f49e13d9095bfb60417d780a69bda9ddee51f08b5_bucket_2 =====
+===== DIRECTORY: ./build/app/intermediates/desugar_graph/debug/out/currentProject/jar_35e98c1ccfd2ad877a1ad45f49e13d9095bfb60417d780a69bda9ddee51f08b5_bucket_3 =====
+===== DIRECTORY: ./build/app/intermediates/desugar_graph/debug/out/currentProject/jar_35e98c1ccfd2ad877a1ad45f49e13d9095bfb60417d780a69bda9ddee51f08b5_bucket_4 =====
+===== DIRECTORY: ./build/app/intermediates/desugar_graph/debug/out/currentProject/jar_35e98c1ccfd2ad877a1ad45f49e13d9095bfb60417d780a69bda9ddee51f08b5_bucket_5 =====
+===== DIRECTORY: ./build/app/intermediates/desugar_graph/debug/out/currentProject/jar_35e98c1ccfd2ad877a1ad45f49e13d9095bfb60417d780a69bda9ddee51f08b5_bucket_6 =====
+===== DIRECTORY: ./build/app/intermediates/desugar_graph/debug/out/currentProject/jar_35e98c1ccfd2ad877a1ad45f49e13d9095bfb60417d780a69bda9ddee51f08b5_bucket_7 =====
+===== DIRECTORY: ./build/app/intermediates/desugar_graph/debug/out/externalLibs =====
+===== DIRECTORY: ./build/app/intermediates/desugar_graph/debug/out/mixedScopes =====
+===== DIRECTORY: ./build/app/intermediates/desugar_graph/debug/out/otherProjects =====
+===== DIRECTORY: ./build/app/intermediates/dex =====
+===== DIRECTORY: ./build/app/intermediates/dex/debug =====
+===== DIRECTORY: ./build/app/intermediates/dex/debug/mergeExtDexDebug =====
+===== DIRECTORY: ./build/app/intermediates/dex/debug/mergeLibDexDebug =====
+===== DIRECTORY: ./build/app/intermediates/dex/debug/mergeLibDexDebug/0 =====
+===== DIRECTORY: ./build/app/intermediates/dex/debug/mergeLibDexDebug/1 =====
+===== DIRECTORY: ./build/app/intermediates/dex/debug/mergeLibDexDebug/10 =====
+===== DIRECTORY: ./build/app/intermediates/dex/debug/mergeLibDexDebug/11 =====
+===== DIRECTORY: ./build/app/intermediates/dex/debug/mergeLibDexDebug/12 =====
+===== DIRECTORY: ./build/app/intermediates/dex/debug/mergeLibDexDebug/13 =====
+===== DIRECTORY: ./build/app/intermediates/dex/debug/mergeLibDexDebug/14 =====
+===== DIRECTORY: ./build/app/intermediates/dex/debug/mergeLibDexDebug/15 =====
+===== DIRECTORY: ./build/app/intermediates/dex/debug/mergeLibDexDebug/2 =====
+===== DIRECTORY: ./build/app/intermediates/dex/debug/mergeLibDexDebug/3 =====
+===== DIRECTORY: ./build/app/intermediates/dex/debug/mergeLibDexDebug/4 =====
+===== DIRECTORY: ./build/app/intermediates/dex/debug/mergeLibDexDebug/5 =====
+===== DIRECTORY: ./build/app/intermediates/dex/debug/mergeLibDexDebug/6 =====
+===== DIRECTORY: ./build/app/intermediates/dex/debug/mergeLibDexDebug/7 =====
+===== DIRECTORY: ./build/app/intermediates/dex/debug/mergeLibDexDebug/8 =====
+===== DIRECTORY: ./build/app/intermediates/dex/debug/mergeLibDexDebug/9 =====
+===== DIRECTORY: ./build/app/intermediates/dex/debug/mergeProjectDexDebug =====
+===== DIRECTORY: ./build/app/intermediates/dex/debug/mergeProjectDexDebug/0 =====
+===== DIRECTORY: ./build/app/intermediates/dex/debug/mergeProjectDexDebug/1 =====
+===== DIRECTORY: ./build/app/intermediates/dex/debug/mergeProjectDexDebug/10 =====
+===== DIRECTORY: ./build/app/intermediates/dex/debug/mergeProjectDexDebug/11 =====
+===== DIRECTORY: ./build/app/intermediates/dex/debug/mergeProjectDexDebug/12 =====
+===== DIRECTORY: ./build/app/intermediates/dex/debug/mergeProjectDexDebug/13 =====
+===== DIRECTORY: ./build/app/intermediates/dex/debug/mergeProjectDexDebug/14 =====
+===== DIRECTORY: ./build/app/intermediates/dex/debug/mergeProjectDexDebug/15 =====
+===== DIRECTORY: ./build/app/intermediates/dex/debug/mergeProjectDexDebug/2 =====
+===== DIRECTORY: ./build/app/intermediates/dex/debug/mergeProjectDexDebug/3 =====
+===== DIRECTORY: ./build/app/intermediates/dex/debug/mergeProjectDexDebug/4 =====
+===== DIRECTORY: ./build/app/intermediates/dex/debug/mergeProjectDexDebug/5 =====
+===== DIRECTORY: ./build/app/intermediates/dex/debug/mergeProjectDexDebug/6 =====
+===== DIRECTORY: ./build/app/intermediates/dex/debug/mergeProjectDexDebug/7 =====
+===== DIRECTORY: ./build/app/intermediates/dex/debug/mergeProjectDexDebug/8 =====
+===== DIRECTORY: ./build/app/intermediates/dex/debug/mergeProjectDexDebug/9 =====
+===== DIRECTORY: ./build/app/intermediates/dex_archive_input_jar_hashes =====
+===== DIRECTORY: ./build/app/intermediates/dex_archive_input_jar_hashes/debug =====
+===== DIRECTORY: ./build/app/intermediates/dex_number_of_buckets_file =====
+===== DIRECTORY: ./build/app/intermediates/dex_number_of_buckets_file/debug =====
+===== DIRECTORY: ./build/app/intermediates/duplicate_classes_check =====
+===== DIRECTORY: ./build/app/intermediates/duplicate_classes_check/debug =====
+===== DIRECTORY: ./build/app/intermediates/external_file_lib_dex_archives =====
+===== DIRECTORY: ./build/app/intermediates/external_file_lib_dex_archives/debug =====
+===== DIRECTORY: ./build/app/intermediates/external_libs_dex_archive =====
+===== DIRECTORY: ./build/app/intermediates/external_libs_dex_archive/debug =====
+===== DIRECTORY: ./build/app/intermediates/external_libs_dex_archive/debug/out =====
+===== DIRECTORY: ./build/app/intermediates/external_libs_dex_archive_with_artifact_transforms =====
+===== DIRECTORY: ./build/app/intermediates/external_libs_dex_archive_with_artifact_transforms/debug =====
+===== DIRECTORY: ./build/app/intermediates/external_libs_dex_archive_with_artifact_transforms/debug/out =====
+===== DIRECTORY: ./build/app/intermediates/flutter =====
+===== DIRECTORY: ./build/app/intermediates/flutter/debug =====
+===== DIRECTORY: ./build/app/intermediates/flutter/debug/flutter_assets =====
+===== DIRECTORY: ./build/app/intermediates/flutter/debug/flutter_assets/fonts =====
+===== DIRECTORY: ./build/app/intermediates/flutter/debug/flutter_assets/shaders =====
+===== DIRECTORY: ./build/app/intermediates/incremental =====
+===== DIRECTORY: ./build/app/intermediates/incremental/debug =====
+===== DIRECTORY: ./build/app/intermediates/incremental/debug/mergeDebugResources =====
+===== DIRECTORY: ./build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir =====
+===== DIRECTORY: ./build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir/values =====
+===== DIRECTORY: ./build/app/intermediates/incremental/debug/mergeDebugResources/stripped.dir =====
+===== DIRECTORY: ./build/app/intermediates/incremental/debug-mergeJavaRes =====
+===== DIRECTORY: ./build/app/intermediates/incremental/debug-mergeJavaRes/zip-cache =====
+===== DIRECTORY: ./build/app/intermediates/incremental/mergeDebugAssets =====
+===== DIRECTORY: ./build/app/intermediates/incremental/mergeDebugJniLibFolders =====
+===== DIRECTORY: ./build/app/intermediates/incremental/mergeDebugShaders =====
+===== DIRECTORY: ./build/app/intermediates/incremental/packageDebug =====
+===== DIRECTORY: ./build/app/intermediates/incremental/packageDebug/tmp =====
+===== DIRECTORY: ./build/app/intermediates/incremental/packageDebug/tmp/debug =====
+===== DIRECTORY: ./build/app/intermediates/incremental/packageDebug/tmp/debug/zip-cache =====
+===== DIRECTORY: ./build/app/intermediates/incremental/processDebugResources =====
+===== DIRECTORY: ./build/app/intermediates/javac =====
+===== DIRECTORY: ./build/app/intermediates/javac/debug =====
+===== DIRECTORY: ./build/app/intermediates/javac/debug/classes =====
+===== DIRECTORY: ./build/app/intermediates/javac/debug/classes/com =====
+===== DIRECTORY: ./build/app/intermediates/javac/debug/classes/com/example =====
+===== DIRECTORY: ./build/app/intermediates/javac/debug/classes/com/example/vision_vendor =====
+===== DIRECTORY: ./build/app/intermediates/javac/debug/classes/io =====
+===== DIRECTORY: ./build/app/intermediates/javac/debug/classes/io/flutter =====
+===== DIRECTORY: ./build/app/intermediates/javac/debug/classes/io/flutter/plugins =====
+===== DIRECTORY: ./build/app/intermediates/manifest_merge_blame_file =====
+===== DIRECTORY: ./build/app/intermediates/manifest_merge_blame_file/debug =====
+===== DIRECTORY: ./build/app/intermediates/merged_java_res =====
+===== DIRECTORY: ./build/app/intermediates/merged_java_res/debug =====
+===== DIRECTORY: ./build/app/intermediates/merged_jni_libs =====
+===== DIRECTORY: ./build/app/intermediates/merged_jni_libs/debug =====
+===== DIRECTORY: ./build/app/intermediates/merged_jni_libs/debug/out =====
+===== DIRECTORY: ./build/app/intermediates/merged_manifest =====
+===== DIRECTORY: ./build/app/intermediates/merged_manifest/debug =====
+===== DIRECTORY: ./build/app/intermediates/merged_manifests =====
+===== DIRECTORY: ./build/app/intermediates/merged_manifests/debug =====
+===== DIRECTORY: ./build/app/intermediates/merged_native_libs =====
+===== DIRECTORY: ./build/app/intermediates/merged_native_libs/debug =====
+===== DIRECTORY: ./build/app/intermediates/merged_native_libs/debug/out =====
+===== DIRECTORY: ./build/app/intermediates/merged_native_libs/debug/out/lib =====
+===== DIRECTORY: ./build/app/intermediates/merged_native_libs/debug/out/lib/arm64-v8a =====
+===== DIRECTORY: ./build/app/intermediates/merged_native_libs/debug/out/lib/armeabi-v7a =====
+===== DIRECTORY: ./build/app/intermediates/merged_native_libs/debug/out/lib/x86 =====
+===== DIRECTORY: ./build/app/intermediates/merged_native_libs/debug/out/lib/x86_64 =====
+===== DIRECTORY: ./build/app/intermediates/merged_res =====
+===== DIRECTORY: ./build/app/intermediates/merged_res/debug =====
+===== DIRECTORY: ./build/app/intermediates/merged_res_blame_folder =====
+===== DIRECTORY: ./build/app/intermediates/merged_res_blame_folder/debug =====
+===== DIRECTORY: ./build/app/intermediates/merged_res_blame_folder/debug/out =====
+===== DIRECTORY: ./build/app/intermediates/merged_res_blame_folder/debug/out/multi-v2 =====
+===== DIRECTORY: ./build/app/intermediates/merged_res_blame_folder/debug/out/single =====
+===== DIRECTORY: ./build/app/intermediates/merged_shaders =====
+===== DIRECTORY: ./build/app/intermediates/merged_shaders/debug =====
+===== DIRECTORY: ./build/app/intermediates/merged_shaders/debug/out =====
+===== DIRECTORY: ./build/app/intermediates/mixed_scope_dex_archive =====
+===== DIRECTORY: ./build/app/intermediates/mixed_scope_dex_archive/debug =====
+===== DIRECTORY: ./build/app/intermediates/mixed_scope_dex_archive/debug/out =====
+===== DIRECTORY: ./build/app/intermediates/navigation_json =====
+===== DIRECTORY: ./build/app/intermediates/navigation_json/debug =====
+===== DIRECTORY: ./build/app/intermediates/packaged_manifests =====
+===== DIRECTORY: ./build/app/intermediates/packaged_manifests/debug =====
+===== DIRECTORY: ./build/app/intermediates/processed_res =====
+===== DIRECTORY: ./build/app/intermediates/processed_res/debug =====
+===== DIRECTORY: ./build/app/intermediates/processed_res/debug/out =====
+===== DIRECTORY: ./build/app/intermediates/project_dex_archive =====
+===== DIRECTORY: ./build/app/intermediates/project_dex_archive/debug =====
+===== DIRECTORY: ./build/app/intermediates/project_dex_archive/debug/out =====
+===== DIRECTORY: ./build/app/intermediates/project_dex_archive/debug/out/com =====
+===== DIRECTORY: ./build/app/intermediates/project_dex_archive/debug/out/com/example =====
+===== DIRECTORY: ./build/app/intermediates/project_dex_archive/debug/out/com/example/vision_vendor =====
+===== DIRECTORY: ./build/app/intermediates/project_dex_archive/debug/out/io =====
+===== DIRECTORY: ./build/app/intermediates/project_dex_archive/debug/out/io/flutter =====
+===== DIRECTORY: ./build/app/intermediates/project_dex_archive/debug/out/io/flutter/plugins =====
+===== DIRECTORY: ./build/app/intermediates/runtime_symbol_list =====
+===== DIRECTORY: ./build/app/intermediates/runtime_symbol_list/debug =====
+===== DIRECTORY: ./build/app/intermediates/signing_config_versions =====
+===== DIRECTORY: ./build/app/intermediates/signing_config_versions/debug =====
+===== DIRECTORY: ./build/app/intermediates/source_set_path_map =====
+===== DIRECTORY: ./build/app/intermediates/source_set_path_map/debug =====
+===== DIRECTORY: ./build/app/intermediates/stripped_native_libs =====
+===== DIRECTORY: ./build/app/intermediates/stripped_native_libs/debug =====
+===== DIRECTORY: ./build/app/intermediates/stripped_native_libs/debug/out =====
+===== DIRECTORY: ./build/app/intermediates/stripped_native_libs/debug/out/lib =====
+===== DIRECTORY: ./build/app/intermediates/stripped_native_libs/debug/out/lib/arm64-v8a =====
+===== DIRECTORY: ./build/app/intermediates/stripped_native_libs/debug/out/lib/armeabi-v7a =====
+===== DIRECTORY: ./build/app/intermediates/stripped_native_libs/debug/out/lib/x86 =====
+===== DIRECTORY: ./build/app/intermediates/stripped_native_libs/debug/out/lib/x86_64 =====
+===== DIRECTORY: ./build/app/intermediates/sub_project_dex_archive =====
+===== DIRECTORY: ./build/app/intermediates/sub_project_dex_archive/debug =====
+===== DIRECTORY: ./build/app/intermediates/sub_project_dex_archive/debug/out =====
+===== DIRECTORY: ./build/app/intermediates/symbol_list_with_package_name =====
+===== DIRECTORY: ./build/app/intermediates/symbol_list_with_package_name/debug =====
+===== DIRECTORY: ./build/app/intermediates/validate_signing_config =====
+===== DIRECTORY: ./build/app/intermediates/validate_signing_config/debug =====
+===== DIRECTORY: ./build/app/kotlin =====
+===== DIRECTORY: ./build/app/kotlin/compileDebugKotlin =====
+===== DIRECTORY: ./build/app/kotlin/compileDebugKotlin/cacheable =====
+===== DIRECTORY: ./build/app/kotlin/compileDebugKotlin/cacheable/caches-jvm =====
+===== DIRECTORY: ./build/app/kotlin/compileDebugKotlin/cacheable/caches-jvm/inputs =====
+===== DIRECTORY: ./build/app/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm =====
+===== DIRECTORY: ./build/app/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin =====
+===== DIRECTORY: ./build/app/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups =====
+===== DIRECTORY: ./build/app/kotlin/compileDebugKotlin/local-state =====
+===== DIRECTORY: ./build/app/outputs =====
+===== DIRECTORY: ./build/app/outputs/apk =====
+===== DIRECTORY: ./build/app/outputs/apk/debug =====
+===== DIRECTORY: ./build/app/outputs/flutter-apk =====
+===== DIRECTORY: ./build/app/outputs/logs =====
+===== DIRECTORY: ./build/app/tmp =====
+===== DIRECTORY: ./build/app/tmp/compileDebugJavaWithJavac =====
+===== DIRECTORY: ./build/app/tmp/kotlin-classes =====
+===== DIRECTORY: ./build/app/tmp/kotlin-classes/debug =====
+===== DIRECTORY: ./build/app/tmp/kotlin-classes/debug/com =====
+===== DIRECTORY: ./build/app/tmp/kotlin-classes/debug/com/example =====
+===== DIRECTORY: ./build/app/tmp/kotlin-classes/debug/com/example/vision_vendor =====
+===== DIRECTORY: ./build/app/tmp/kotlin-classes/debug/META-INF =====
+===== DIRECTORY: ./build/app/tmp/packJniLibsflutterBuildDebug =====
+===== DIRECTORY: ./build/camera_android_camerax =====
+===== DIRECTORY: ./build/camera_android_camerax/.transforms =====
+===== DIRECTORY: ./build/camera_android_camerax/.transforms/3a6dc40a4f4604f96fb000f26437b572 =====
+===== DIRECTORY: ./build/camera_android_camerax/.transforms/3a6dc40a4f4604f96fb000f26437b572/transformed =====
+===== DIRECTORY: ./build/camera_android_camerax/.transforms/3a6dc40a4f4604f96fb000f26437b572/transformed/classes =====
+===== DIRECTORY: ./build/camera_android_camerax/generated =====
+===== DIRECTORY: ./build/camera_android_camerax/generated/ap_generated_sources =====
+===== DIRECTORY: ./build/camera_android_camerax/generated/ap_generated_sources/debug =====
+===== DIRECTORY: ./build/camera_android_camerax/generated/ap_generated_sources/debug/out =====
+===== DIRECTORY: ./build/camera_android_camerax/generated/res =====
+===== DIRECTORY: ./build/camera_android_camerax/generated/res/pngs =====
+===== DIRECTORY: ./build/camera_android_camerax/generated/res/pngs/debug =====
+===== DIRECTORY: ./build/camera_android_camerax/generated/res/resValues =====
+===== DIRECTORY: ./build/camera_android_camerax/generated/res/resValues/debug =====
+===== DIRECTORY: ./build/camera_android_camerax/generated/source =====
+===== DIRECTORY: ./build/camera_android_camerax/generated/source/buildConfig =====
+===== DIRECTORY: ./build/camera_android_camerax/generated/source/buildConfig/debug =====
+===== DIRECTORY: ./build/camera_android_camerax/generated/source/buildConfig/debug/io =====
+===== DIRECTORY: ./build/camera_android_camerax/generated/source/buildConfig/debug/io/flutter =====
+===== DIRECTORY: ./build/camera_android_camerax/generated/source/buildConfig/debug/io/flutter/plugins =====
+===== DIRECTORY: ./build/camera_android_camerax/generated/source/buildConfig/debug/io/flutter/plugins/camerax =====
+===== DIRECTORY: ./build/camera_android_camerax/intermediates =====
+===== DIRECTORY: ./build/camera_android_camerax/intermediates/aapt_friendly_merged_manifests =====
+===== DIRECTORY: ./build/camera_android_camerax/intermediates/aapt_friendly_merged_manifests/debug =====
+===== DIRECTORY: ./build/camera_android_camerax/intermediates/aapt_friendly_merged_manifests/debug/aapt =====
+===== DIRECTORY: ./build/camera_android_camerax/intermediates/aar_libs_directory =====
+===== DIRECTORY: ./build/camera_android_camerax/intermediates/aar_libs_directory/debug =====
+===== DIRECTORY: ./build/camera_android_camerax/intermediates/aar_libs_directory/debug/libs =====
+===== DIRECTORY: ./build/camera_android_camerax/intermediates/aar_main_jar =====
+===== DIRECTORY: ./build/camera_android_camerax/intermediates/aar_main_jar/debug =====
+===== DIRECTORY: ./build/camera_android_camerax/intermediates/aar_metadata =====
+===== DIRECTORY: ./build/camera_android_camerax/intermediates/aar_metadata/debug =====
+===== DIRECTORY: ./build/camera_android_camerax/intermediates/annotations_typedef_file =====
+===== DIRECTORY: ./build/camera_android_camerax/intermediates/annotations_typedef_file/debug =====
+===== DIRECTORY: ./build/camera_android_camerax/intermediates/annotations_zip =====
+===== DIRECTORY: ./build/camera_android_camerax/intermediates/annotations_zip/debug =====
+===== DIRECTORY: ./build/camera_android_camerax/intermediates/annotation_processor_list =====
+===== DIRECTORY: ./build/camera_android_camerax/intermediates/annotation_processor_list/debug =====
+===== DIRECTORY: ./build/camera_android_camerax/intermediates/compiled_local_resources =====
+===== DIRECTORY: ./build/camera_android_camerax/intermediates/compiled_local_resources/debug =====
+===== DIRECTORY: ./build/camera_android_camerax/intermediates/compiled_local_resources/debug/out =====
+===== DIRECTORY: ./build/camera_android_camerax/intermediates/compile_library_classes_jar =====
+===== DIRECTORY: ./build/camera_android_camerax/intermediates/compile_library_classes_jar/debug =====
+===== DIRECTORY: ./build/camera_android_camerax/intermediates/compile_r_class_jar =====
+===== DIRECTORY: ./build/camera_android_camerax/intermediates/compile_r_class_jar/debug =====
+===== DIRECTORY: ./build/camera_android_camerax/intermediates/compile_symbol_list =====
+===== DIRECTORY: ./build/camera_android_camerax/intermediates/compile_symbol_list/debug =====
+===== DIRECTORY: ./build/camera_android_camerax/intermediates/data_binding_layout_info_type_package =====
+===== DIRECTORY: ./build/camera_android_camerax/intermediates/data_binding_layout_info_type_package/debug =====
+===== DIRECTORY: ./build/camera_android_camerax/intermediates/data_binding_layout_info_type_package/debug/out =====
+===== DIRECTORY: ./build/camera_android_camerax/intermediates/incremental =====
+===== DIRECTORY: ./build/camera_android_camerax/intermediates/incremental/debug =====
+===== DIRECTORY: ./build/camera_android_camerax/intermediates/incremental/debug/packageDebugResources =====
+===== DIRECTORY: ./build/camera_android_camerax/intermediates/incremental/debug/packageDebugResources/merged.dir =====
+===== DIRECTORY: ./build/camera_android_camerax/intermediates/incremental/debug/packageDebugResources/stripped.dir =====
+===== DIRECTORY: ./build/camera_android_camerax/intermediates/incremental/debug-mergeJavaRes =====
+===== DIRECTORY: ./build/camera_android_camerax/intermediates/incremental/debug-mergeJavaRes/zip-cache =====
+===== DIRECTORY: ./build/camera_android_camerax/intermediates/incremental/mergeDebugJniLibFolders =====
+===== DIRECTORY: ./build/camera_android_camerax/intermediates/incremental/mergeDebugShaders =====
+===== DIRECTORY: ./build/camera_android_camerax/intermediates/incremental/packageDebugAssets =====
+===== DIRECTORY: ./build/camera_android_camerax/intermediates/javac =====
+===== DIRECTORY: ./build/camera_android_camerax/intermediates/javac/debug =====
+===== DIRECTORY: ./build/camera_android_camerax/intermediates/javac/debug/classes =====
+===== DIRECTORY: ./build/camera_android_camerax/intermediates/javac/debug/classes/io =====
+===== DIRECTORY: ./build/camera_android_camerax/intermediates/javac/debug/classes/io/flutter =====
+===== DIRECTORY: ./build/camera_android_camerax/intermediates/javac/debug/classes/io/flutter/plugins =====
+===== DIRECTORY: ./build/camera_android_camerax/intermediates/javac/debug/classes/io/flutter/plugins/camerax =====
+===== DIRECTORY: ./build/camera_android_camerax/intermediates/library_and_local_jars_jni =====
+===== DIRECTORY: ./build/camera_android_camerax/intermediates/library_and_local_jars_jni/debug =====
+===== DIRECTORY: ./build/camera_android_camerax/intermediates/library_and_local_jars_jni/debug/jni =====
+===== DIRECTORY: ./build/camera_android_camerax/intermediates/library_assets =====
+===== DIRECTORY: ./build/camera_android_camerax/intermediates/library_assets/debug =====
+===== DIRECTORY: ./build/camera_android_camerax/intermediates/library_assets/debug/out =====
+===== DIRECTORY: ./build/camera_android_camerax/intermediates/library_jni =====
+===== DIRECTORY: ./build/camera_android_camerax/intermediates/library_jni/debug =====
+===== DIRECTORY: ./build/camera_android_camerax/intermediates/library_jni/debug/jni =====
+===== DIRECTORY: ./build/camera_android_camerax/intermediates/local_only_symbol_list =====
+===== DIRECTORY: ./build/camera_android_camerax/intermediates/local_only_symbol_list/debug =====
+===== DIRECTORY: ./build/camera_android_camerax/intermediates/manifest_merge_blame_file =====
+===== DIRECTORY: ./build/camera_android_camerax/intermediates/manifest_merge_blame_file/debug =====
+===== DIRECTORY: ./build/camera_android_camerax/intermediates/merged_java_res =====
+===== DIRECTORY: ./build/camera_android_camerax/intermediates/merged_java_res/debug =====
+===== DIRECTORY: ./build/camera_android_camerax/intermediates/merged_jni_libs =====
+===== DIRECTORY: ./build/camera_android_camerax/intermediates/merged_jni_libs/debug =====
+===== DIRECTORY: ./build/camera_android_camerax/intermediates/merged_jni_libs/debug/out =====
+===== DIRECTORY: ./build/camera_android_camerax/intermediates/merged_manifest =====
+===== DIRECTORY: ./build/camera_android_camerax/intermediates/merged_manifest/debug =====
+===== DIRECTORY: ./build/camera_android_camerax/intermediates/merged_shaders =====
+===== DIRECTORY: ./build/camera_android_camerax/intermediates/merged_shaders/debug =====
+===== DIRECTORY: ./build/camera_android_camerax/intermediates/merged_shaders/debug/out =====
+===== DIRECTORY: ./build/camera_android_camerax/intermediates/navigation_json =====
+===== DIRECTORY: ./build/camera_android_camerax/intermediates/navigation_json/debug =====
+===== DIRECTORY: ./build/camera_android_camerax/intermediates/packaged_manifests =====
+===== DIRECTORY: ./build/camera_android_camerax/intermediates/packaged_manifests/debug =====
+===== DIRECTORY: ./build/camera_android_camerax/intermediates/packaged_res =====
+===== DIRECTORY: ./build/camera_android_camerax/intermediates/packaged_res/debug =====
+===== DIRECTORY: ./build/camera_android_camerax/intermediates/public_res =====
+===== DIRECTORY: ./build/camera_android_camerax/intermediates/public_res/debug =====
+===== DIRECTORY: ./build/camera_android_camerax/intermediates/runtime_library_classes_jar =====
+===== DIRECTORY: ./build/camera_android_camerax/intermediates/runtime_library_classes_jar/debug =====
+===== DIRECTORY: ./build/camera_android_camerax/intermediates/symbol_list_with_package_name =====
+===== DIRECTORY: ./build/camera_android_camerax/intermediates/symbol_list_with_package_name/debug =====
+===== DIRECTORY: ./build/camera_android_camerax/outputs =====
+===== DIRECTORY: ./build/camera_android_camerax/outputs/aar =====
+===== DIRECTORY: ./build/camera_android_camerax/outputs/logs =====
+===== DIRECTORY: ./build/camera_android_camerax/tmp =====
+===== DIRECTORY: ./build/camera_android_camerax/tmp/compileDebugJavaWithJavac =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/.transforms =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/.transforms/4c73d88f0879d07d977f899d371d6de3 =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/.transforms/4c73d88f0879d07d977f899d371d6de3/transformed =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/.transforms/4c73d88f0879d07d977f899d371d6de3/transformed/classes =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/generated =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/generated/ap_generated_sources =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/generated/ap_generated_sources/debug =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/generated/ap_generated_sources/debug/out =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/generated/res =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/generated/res/pngs =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/generated/res/pngs/debug =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/generated/res/resValues =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/generated/res/resValues/debug =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/generated/source =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/generated/source/buildConfig =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/generated/source/buildConfig/debug =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/generated/source/buildConfig/debug/io =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/generated/source/buildConfig/debug/io/flutter =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/generated/source/buildConfig/debug/io/flutter/plugins =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/generated/source/buildConfig/debug/io/flutter/plugins/flutter_plugin_android_lifecycle =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/intermediates =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/intermediates/aapt_friendly_merged_manifests =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/intermediates/aapt_friendly_merged_manifests/debug =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/intermediates/aapt_friendly_merged_manifests/debug/aapt =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/intermediates/aar_libs_directory =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/intermediates/aar_libs_directory/debug =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/intermediates/aar_libs_directory/debug/libs =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/intermediates/aar_main_jar =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/intermediates/aar_main_jar/debug =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/intermediates/aar_metadata =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/intermediates/aar_metadata/debug =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/intermediates/annotations_typedef_file =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/intermediates/annotations_typedef_file/debug =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/intermediates/annotations_zip =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/intermediates/annotations_zip/debug =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/intermediates/annotation_processor_list =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/intermediates/annotation_processor_list/debug =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/intermediates/compiled_local_resources =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/intermediates/compiled_local_resources/debug =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/intermediates/compiled_local_resources/debug/out =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/intermediates/compile_library_classes_jar =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/intermediates/compile_library_classes_jar/debug =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/intermediates/compile_r_class_jar =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/intermediates/compile_r_class_jar/debug =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/intermediates/compile_symbol_list =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/intermediates/compile_symbol_list/debug =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/intermediates/data_binding_layout_info_type_package =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/intermediates/data_binding_layout_info_type_package/debug =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/intermediates/data_binding_layout_info_type_package/debug/out =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/intermediates/incremental =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/intermediates/incremental/debug =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/intermediates/incremental/debug/packageDebugResources =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/intermediates/incremental/debug/packageDebugResources/merged.dir =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/intermediates/incremental/debug/packageDebugResources/stripped.dir =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/intermediates/incremental/debug-mergeJavaRes =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/intermediates/incremental/debug-mergeJavaRes/zip-cache =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/intermediates/incremental/mergeDebugJniLibFolders =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/intermediates/incremental/mergeDebugShaders =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/intermediates/incremental/packageDebugAssets =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/intermediates/javac =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/intermediates/javac/debug =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/intermediates/javac/debug/classes =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/intermediates/javac/debug/classes/io =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/intermediates/javac/debug/classes/io/flutter =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/intermediates/javac/debug/classes/io/flutter/embedding =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/intermediates/javac/debug/classes/io/flutter/embedding/engine =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/intermediates/javac/debug/classes/io/flutter/embedding/engine/plugins =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/intermediates/javac/debug/classes/io/flutter/embedding/engine/plugins/lifecycle =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/intermediates/javac/debug/classes/io/flutter/plugins =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/intermediates/javac/debug/classes/io/flutter/plugins/flutter_plugin_android_lifecycle =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/intermediates/library_and_local_jars_jni =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/intermediates/library_and_local_jars_jni/debug =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/intermediates/library_and_local_jars_jni/debug/jni =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/intermediates/library_assets =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/intermediates/library_assets/debug =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/intermediates/library_assets/debug/out =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/intermediates/library_jni =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/intermediates/library_jni/debug =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/intermediates/library_jni/debug/jni =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/intermediates/local_only_symbol_list =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/intermediates/local_only_symbol_list/debug =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/intermediates/manifest_merge_blame_file =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/intermediates/manifest_merge_blame_file/debug =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/intermediates/merged_consumer_proguard_file =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/intermediates/merged_consumer_proguard_file/debug =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/intermediates/merged_java_res =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/intermediates/merged_java_res/debug =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/intermediates/merged_jni_libs =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/intermediates/merged_jni_libs/debug =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/intermediates/merged_jni_libs/debug/out =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/intermediates/merged_manifest =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/intermediates/merged_manifest/debug =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/intermediates/merged_shaders =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/intermediates/merged_shaders/debug =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/intermediates/merged_shaders/debug/out =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/intermediates/navigation_json =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/intermediates/navigation_json/debug =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/intermediates/packaged_manifests =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/intermediates/packaged_manifests/debug =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/intermediates/packaged_res =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/intermediates/packaged_res/debug =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/intermediates/public_res =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/intermediates/public_res/debug =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/intermediates/runtime_library_classes_jar =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/intermediates/runtime_library_classes_jar/debug =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/intermediates/symbol_list_with_package_name =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/intermediates/symbol_list_with_package_name/debug =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/outputs =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/outputs/aar =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/outputs/logs =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/tmp =====
+===== DIRECTORY: ./build/flutter_plugin_android_lifecycle/tmp/compileDebugJavaWithJavac =====
+===== DIRECTORY: ./build/image_picker_android =====
+===== DIRECTORY: ./build/image_picker_android/.transforms =====
+===== DIRECTORY: ./build/image_picker_android/.transforms/a33c253e43ec3ec60f5180176cf66067 =====
+===== DIRECTORY: ./build/image_picker_android/.transforms/a33c253e43ec3ec60f5180176cf66067/transformed =====
+===== DIRECTORY: ./build/image_picker_android/.transforms/a33c253e43ec3ec60f5180176cf66067/transformed/classes =====
+===== DIRECTORY: ./build/image_picker_android/generated =====
+===== DIRECTORY: ./build/image_picker_android/generated/ap_generated_sources =====
+===== DIRECTORY: ./build/image_picker_android/generated/ap_generated_sources/debug =====
+===== DIRECTORY: ./build/image_picker_android/generated/ap_generated_sources/debug/out =====
+===== DIRECTORY: ./build/image_picker_android/generated/res =====
+===== DIRECTORY: ./build/image_picker_android/generated/res/pngs =====
+===== DIRECTORY: ./build/image_picker_android/generated/res/pngs/debug =====
+===== DIRECTORY: ./build/image_picker_android/generated/res/resValues =====
+===== DIRECTORY: ./build/image_picker_android/generated/res/resValues/debug =====
+===== DIRECTORY: ./build/image_picker_android/generated/source =====
+===== DIRECTORY: ./build/image_picker_android/generated/source/buildConfig =====
+===== DIRECTORY: ./build/image_picker_android/generated/source/buildConfig/debug =====
+===== DIRECTORY: ./build/image_picker_android/generated/source/buildConfig/debug/io =====
+===== DIRECTORY: ./build/image_picker_android/generated/source/buildConfig/debug/io/flutter =====
+===== DIRECTORY: ./build/image_picker_android/generated/source/buildConfig/debug/io/flutter/plugins =====
+===== DIRECTORY: ./build/image_picker_android/generated/source/buildConfig/debug/io/flutter/plugins/imagepicker =====
+===== DIRECTORY: ./build/image_picker_android/intermediates =====
+===== DIRECTORY: ./build/image_picker_android/intermediates/aapt_friendly_merged_manifests =====
+===== DIRECTORY: ./build/image_picker_android/intermediates/aapt_friendly_merged_manifests/debug =====
+===== DIRECTORY: ./build/image_picker_android/intermediates/aapt_friendly_merged_manifests/debug/aapt =====
+===== DIRECTORY: ./build/image_picker_android/intermediates/aar_libs_directory =====
+===== DIRECTORY: ./build/image_picker_android/intermediates/aar_libs_directory/debug =====
+===== DIRECTORY: ./build/image_picker_android/intermediates/aar_libs_directory/debug/libs =====
+===== DIRECTORY: ./build/image_picker_android/intermediates/aar_main_jar =====
+===== DIRECTORY: ./build/image_picker_android/intermediates/aar_main_jar/debug =====
+===== DIRECTORY: ./build/image_picker_android/intermediates/aar_metadata =====
+===== DIRECTORY: ./build/image_picker_android/intermediates/aar_metadata/debug =====
+===== DIRECTORY: ./build/image_picker_android/intermediates/annotations_typedef_file =====
+===== DIRECTORY: ./build/image_picker_android/intermediates/annotations_typedef_file/debug =====
+===== DIRECTORY: ./build/image_picker_android/intermediates/annotations_zip =====
+===== DIRECTORY: ./build/image_picker_android/intermediates/annotations_zip/debug =====
+===== DIRECTORY: ./build/image_picker_android/intermediates/annotation_processor_list =====
+===== DIRECTORY: ./build/image_picker_android/intermediates/annotation_processor_list/debug =====
+===== DIRECTORY: ./build/image_picker_android/intermediates/compiled_local_resources =====
+===== DIRECTORY: ./build/image_picker_android/intermediates/compiled_local_resources/debug =====
+===== DIRECTORY: ./build/image_picker_android/intermediates/compiled_local_resources/debug/out =====
+===== DIRECTORY: ./build/image_picker_android/intermediates/compile_library_classes_jar =====
+===== DIRECTORY: ./build/image_picker_android/intermediates/compile_library_classes_jar/debug =====
+===== DIRECTORY: ./build/image_picker_android/intermediates/compile_r_class_jar =====
+===== DIRECTORY: ./build/image_picker_android/intermediates/compile_r_class_jar/debug =====
+===== DIRECTORY: ./build/image_picker_android/intermediates/compile_symbol_list =====
+===== DIRECTORY: ./build/image_picker_android/intermediates/compile_symbol_list/debug =====
+===== DIRECTORY: ./build/image_picker_android/intermediates/data_binding_layout_info_type_package =====
+===== DIRECTORY: ./build/image_picker_android/intermediates/data_binding_layout_info_type_package/debug =====
+===== DIRECTORY: ./build/image_picker_android/intermediates/data_binding_layout_info_type_package/debug/out =====
+===== DIRECTORY: ./build/image_picker_android/intermediates/incremental =====
+===== DIRECTORY: ./build/image_picker_android/intermediates/incremental/debug =====
+===== DIRECTORY: ./build/image_picker_android/intermediates/incremental/debug/packageDebugResources =====
+===== DIRECTORY: ./build/image_picker_android/intermediates/incremental/debug/packageDebugResources/merged.dir =====
+===== DIRECTORY: ./build/image_picker_android/intermediates/incremental/debug/packageDebugResources/stripped.dir =====
+===== DIRECTORY: ./build/image_picker_android/intermediates/incremental/debug-mergeJavaRes =====
+===== DIRECTORY: ./build/image_picker_android/intermediates/incremental/debug-mergeJavaRes/zip-cache =====
+===== DIRECTORY: ./build/image_picker_android/intermediates/incremental/mergeDebugJniLibFolders =====
+===== DIRECTORY: ./build/image_picker_android/intermediates/incremental/mergeDebugShaders =====
+===== DIRECTORY: ./build/image_picker_android/intermediates/incremental/packageDebugAssets =====
+===== DIRECTORY: ./build/image_picker_android/intermediates/javac =====
+===== DIRECTORY: ./build/image_picker_android/intermediates/javac/debug =====
+===== DIRECTORY: ./build/image_picker_android/intermediates/javac/debug/classes =====
+===== DIRECTORY: ./build/image_picker_android/intermediates/javac/debug/classes/io =====
+===== DIRECTORY: ./build/image_picker_android/intermediates/javac/debug/classes/io/flutter =====
+===== DIRECTORY: ./build/image_picker_android/intermediates/javac/debug/classes/io/flutter/plugins =====
+===== DIRECTORY: ./build/image_picker_android/intermediates/javac/debug/classes/io/flutter/plugins/imagepicker =====
+===== DIRECTORY: ./build/image_picker_android/intermediates/library_and_local_jars_jni =====
+===== DIRECTORY: ./build/image_picker_android/intermediates/library_and_local_jars_jni/debug =====
+===== DIRECTORY: ./build/image_picker_android/intermediates/library_and_local_jars_jni/debug/jni =====
+===== DIRECTORY: ./build/image_picker_android/intermediates/library_assets =====
+===== DIRECTORY: ./build/image_picker_android/intermediates/library_assets/debug =====
+===== DIRECTORY: ./build/image_picker_android/intermediates/library_assets/debug/out =====
+===== DIRECTORY: ./build/image_picker_android/intermediates/library_jni =====
+===== DIRECTORY: ./build/image_picker_android/intermediates/library_jni/debug =====
+===== DIRECTORY: ./build/image_picker_android/intermediates/library_jni/debug/jni =====
+===== DIRECTORY: ./build/image_picker_android/intermediates/local_only_symbol_list =====
+===== DIRECTORY: ./build/image_picker_android/intermediates/local_only_symbol_list/debug =====
+===== DIRECTORY: ./build/image_picker_android/intermediates/manifest_merge_blame_file =====
+===== DIRECTORY: ./build/image_picker_android/intermediates/manifest_merge_blame_file/debug =====
+===== DIRECTORY: ./build/image_picker_android/intermediates/merged_java_res =====
+===== DIRECTORY: ./build/image_picker_android/intermediates/merged_java_res/debug =====
+===== DIRECTORY: ./build/image_picker_android/intermediates/merged_jni_libs =====
+===== DIRECTORY: ./build/image_picker_android/intermediates/merged_jni_libs/debug =====
+===== DIRECTORY: ./build/image_picker_android/intermediates/merged_jni_libs/debug/out =====
+===== DIRECTORY: ./build/image_picker_android/intermediates/merged_manifest =====
+===== DIRECTORY: ./build/image_picker_android/intermediates/merged_manifest/debug =====
+===== DIRECTORY: ./build/image_picker_android/intermediates/merged_shaders =====
+===== DIRECTORY: ./build/image_picker_android/intermediates/merged_shaders/debug =====
+===== DIRECTORY: ./build/image_picker_android/intermediates/merged_shaders/debug/out =====
+===== DIRECTORY: ./build/image_picker_android/intermediates/navigation_json =====
+===== DIRECTORY: ./build/image_picker_android/intermediates/navigation_json/debug =====
+===== DIRECTORY: ./build/image_picker_android/intermediates/packaged_manifests =====
+===== DIRECTORY: ./build/image_picker_android/intermediates/packaged_manifests/debug =====
+===== DIRECTORY: ./build/image_picker_android/intermediates/packaged_res =====
+===== DIRECTORY: ./build/image_picker_android/intermediates/packaged_res/debug =====
+===== DIRECTORY: ./build/image_picker_android/intermediates/packaged_res/debug/xml =====
+===== DIRECTORY: ./build/image_picker_android/intermediates/public_res =====
+===== DIRECTORY: ./build/image_picker_android/intermediates/public_res/debug =====
+===== DIRECTORY: ./build/image_picker_android/intermediates/runtime_library_classes_jar =====
+===== DIRECTORY: ./build/image_picker_android/intermediates/runtime_library_classes_jar/debug =====
+===== DIRECTORY: ./build/image_picker_android/intermediates/symbol_list_with_package_name =====
+===== DIRECTORY: ./build/image_picker_android/intermediates/symbol_list_with_package_name/debug =====
+===== DIRECTORY: ./build/image_picker_android/outputs =====
+===== DIRECTORY: ./build/image_picker_android/outputs/aar =====
+===== DIRECTORY: ./build/image_picker_android/outputs/logs =====
+===== DIRECTORY: ./build/image_picker_android/tmp =====
+===== DIRECTORY: ./build/image_picker_android/tmp/compileDebugJavaWithJavac =====
+===== DIRECTORY: ./build/kotlin =====
+===== DIRECTORY: ./build/kotlin/sessions =====
+===== DIRECTORY: ./build/path_provider_android =====
+===== DIRECTORY: ./build/path_provider_android/.transforms =====
+===== DIRECTORY: ./build/path_provider_android/.transforms/0d9aa665df8a6b75e5460338e19c7833 =====
+===== DIRECTORY: ./build/path_provider_android/.transforms/0d9aa665df8a6b75e5460338e19c7833/transformed =====
+===== DIRECTORY: ./build/path_provider_android/.transforms/0d9aa665df8a6b75e5460338e19c7833/transformed/classes =====
+===== DIRECTORY: ./build/path_provider_android/generated =====
+===== DIRECTORY: ./build/path_provider_android/generated/ap_generated_sources =====
+===== DIRECTORY: ./build/path_provider_android/generated/ap_generated_sources/debug =====
+===== DIRECTORY: ./build/path_provider_android/generated/ap_generated_sources/debug/out =====
+===== DIRECTORY: ./build/path_provider_android/generated/res =====
+===== DIRECTORY: ./build/path_provider_android/generated/res/pngs =====
+===== DIRECTORY: ./build/path_provider_android/generated/res/pngs/debug =====
+===== DIRECTORY: ./build/path_provider_android/generated/res/resValues =====
+===== DIRECTORY: ./build/path_provider_android/generated/res/resValues/debug =====
+===== DIRECTORY: ./build/path_provider_android/generated/source =====
+===== DIRECTORY: ./build/path_provider_android/generated/source/buildConfig =====
+===== DIRECTORY: ./build/path_provider_android/generated/source/buildConfig/debug =====
+===== DIRECTORY: ./build/path_provider_android/generated/source/buildConfig/debug/io =====
+===== DIRECTORY: ./build/path_provider_android/generated/source/buildConfig/debug/io/flutter =====
+===== DIRECTORY: ./build/path_provider_android/generated/source/buildConfig/debug/io/flutter/plugins =====
+===== DIRECTORY: ./build/path_provider_android/generated/source/buildConfig/debug/io/flutter/plugins/pathprovider =====
+===== DIRECTORY: ./build/path_provider_android/intermediates =====
+===== DIRECTORY: ./build/path_provider_android/intermediates/aapt_friendly_merged_manifests =====
+===== DIRECTORY: ./build/path_provider_android/intermediates/aapt_friendly_merged_manifests/debug =====
+===== DIRECTORY: ./build/path_provider_android/intermediates/aapt_friendly_merged_manifests/debug/aapt =====
+===== DIRECTORY: ./build/path_provider_android/intermediates/aar_libs_directory =====
+===== DIRECTORY: ./build/path_provider_android/intermediates/aar_libs_directory/debug =====
+===== DIRECTORY: ./build/path_provider_android/intermediates/aar_libs_directory/debug/libs =====
+===== DIRECTORY: ./build/path_provider_android/intermediates/aar_main_jar =====
+===== DIRECTORY: ./build/path_provider_android/intermediates/aar_main_jar/debug =====
+===== DIRECTORY: ./build/path_provider_android/intermediates/aar_metadata =====
+===== DIRECTORY: ./build/path_provider_android/intermediates/aar_metadata/debug =====
+===== DIRECTORY: ./build/path_provider_android/intermediates/annotations_typedef_file =====
+===== DIRECTORY: ./build/path_provider_android/intermediates/annotations_typedef_file/debug =====
+===== DIRECTORY: ./build/path_provider_android/intermediates/annotations_zip =====
+===== DIRECTORY: ./build/path_provider_android/intermediates/annotations_zip/debug =====
+===== DIRECTORY: ./build/path_provider_android/intermediates/annotation_processor_list =====
+===== DIRECTORY: ./build/path_provider_android/intermediates/annotation_processor_list/debug =====
+===== DIRECTORY: ./build/path_provider_android/intermediates/compiled_local_resources =====
+===== DIRECTORY: ./build/path_provider_android/intermediates/compiled_local_resources/debug =====
+===== DIRECTORY: ./build/path_provider_android/intermediates/compiled_local_resources/debug/out =====
+===== DIRECTORY: ./build/path_provider_android/intermediates/compile_library_classes_jar =====
+===== DIRECTORY: ./build/path_provider_android/intermediates/compile_library_classes_jar/debug =====
+===== DIRECTORY: ./build/path_provider_android/intermediates/compile_r_class_jar =====
+===== DIRECTORY: ./build/path_provider_android/intermediates/compile_r_class_jar/debug =====
+===== DIRECTORY: ./build/path_provider_android/intermediates/compile_symbol_list =====
+===== DIRECTORY: ./build/path_provider_android/intermediates/compile_symbol_list/debug =====
+===== DIRECTORY: ./build/path_provider_android/intermediates/data_binding_layout_info_type_package =====
+===== DIRECTORY: ./build/path_provider_android/intermediates/data_binding_layout_info_type_package/debug =====
+===== DIRECTORY: ./build/path_provider_android/intermediates/data_binding_layout_info_type_package/debug/out =====
+===== DIRECTORY: ./build/path_provider_android/intermediates/incremental =====
+===== DIRECTORY: ./build/path_provider_android/intermediates/incremental/debug =====
+===== DIRECTORY: ./build/path_provider_android/intermediates/incremental/debug/packageDebugResources =====
+===== DIRECTORY: ./build/path_provider_android/intermediates/incremental/debug/packageDebugResources/merged.dir =====
+===== DIRECTORY: ./build/path_provider_android/intermediates/incremental/debug/packageDebugResources/stripped.dir =====
+===== DIRECTORY: ./build/path_provider_android/intermediates/incremental/debug-mergeJavaRes =====
+===== DIRECTORY: ./build/path_provider_android/intermediates/incremental/debug-mergeJavaRes/zip-cache =====
+===== DIRECTORY: ./build/path_provider_android/intermediates/incremental/mergeDebugJniLibFolders =====
+===== DIRECTORY: ./build/path_provider_android/intermediates/incremental/mergeDebugShaders =====
+===== DIRECTORY: ./build/path_provider_android/intermediates/incremental/packageDebugAssets =====
+===== DIRECTORY: ./build/path_provider_android/intermediates/javac =====
+===== DIRECTORY: ./build/path_provider_android/intermediates/javac/debug =====
+===== DIRECTORY: ./build/path_provider_android/intermediates/javac/debug/classes =====
+===== DIRECTORY: ./build/path_provider_android/intermediates/javac/debug/classes/io =====
+===== DIRECTORY: ./build/path_provider_android/intermediates/javac/debug/classes/io/flutter =====
+===== DIRECTORY: ./build/path_provider_android/intermediates/javac/debug/classes/io/flutter/plugins =====
+===== DIRECTORY: ./build/path_provider_android/intermediates/javac/debug/classes/io/flutter/plugins/pathprovider =====
+===== DIRECTORY: ./build/path_provider_android/intermediates/library_and_local_jars_jni =====
+===== DIRECTORY: ./build/path_provider_android/intermediates/library_and_local_jars_jni/debug =====
+===== DIRECTORY: ./build/path_provider_android/intermediates/library_and_local_jars_jni/debug/jni =====
+===== DIRECTORY: ./build/path_provider_android/intermediates/library_assets =====
+===== DIRECTORY: ./build/path_provider_android/intermediates/library_assets/debug =====
+===== DIRECTORY: ./build/path_provider_android/intermediates/library_assets/debug/out =====
+===== DIRECTORY: ./build/path_provider_android/intermediates/library_jni =====
+===== DIRECTORY: ./build/path_provider_android/intermediates/library_jni/debug =====
+===== DIRECTORY: ./build/path_provider_android/intermediates/library_jni/debug/jni =====
+===== DIRECTORY: ./build/path_provider_android/intermediates/local_only_symbol_list =====
+===== DIRECTORY: ./build/path_provider_android/intermediates/local_only_symbol_list/debug =====
+===== DIRECTORY: ./build/path_provider_android/intermediates/manifest_merge_blame_file =====
+===== DIRECTORY: ./build/path_provider_android/intermediates/manifest_merge_blame_file/debug =====
+===== DIRECTORY: ./build/path_provider_android/intermediates/merged_java_res =====
+===== DIRECTORY: ./build/path_provider_android/intermediates/merged_java_res/debug =====
+===== DIRECTORY: ./build/path_provider_android/intermediates/merged_jni_libs =====
+===== DIRECTORY: ./build/path_provider_android/intermediates/merged_jni_libs/debug =====
+===== DIRECTORY: ./build/path_provider_android/intermediates/merged_jni_libs/debug/out =====
+===== DIRECTORY: ./build/path_provider_android/intermediates/merged_manifest =====
+===== DIRECTORY: ./build/path_provider_android/intermediates/merged_manifest/debug =====
+===== DIRECTORY: ./build/path_provider_android/intermediates/merged_shaders =====
+===== DIRECTORY: ./build/path_provider_android/intermediates/merged_shaders/debug =====
+===== DIRECTORY: ./build/path_provider_android/intermediates/merged_shaders/debug/out =====
+===== DIRECTORY: ./build/path_provider_android/intermediates/navigation_json =====
+===== DIRECTORY: ./build/path_provider_android/intermediates/navigation_json/debug =====
+===== DIRECTORY: ./build/path_provider_android/intermediates/packaged_manifests =====
+===== DIRECTORY: ./build/path_provider_android/intermediates/packaged_manifests/debug =====
+===== DIRECTORY: ./build/path_provider_android/intermediates/packaged_res =====
+===== DIRECTORY: ./build/path_provider_android/intermediates/packaged_res/debug =====
+===== DIRECTORY: ./build/path_provider_android/intermediates/public_res =====
+===== DIRECTORY: ./build/path_provider_android/intermediates/public_res/debug =====
+===== DIRECTORY: ./build/path_provider_android/intermediates/runtime_library_classes_jar =====
+===== DIRECTORY: ./build/path_provider_android/intermediates/runtime_library_classes_jar/debug =====
+===== DIRECTORY: ./build/path_provider_android/intermediates/symbol_list_with_package_name =====
+===== DIRECTORY: ./build/path_provider_android/intermediates/symbol_list_with_package_name/debug =====
+===== DIRECTORY: ./build/path_provider_android/outputs =====
+===== DIRECTORY: ./build/path_provider_android/outputs/aar =====
+===== DIRECTORY: ./build/path_provider_android/outputs/logs =====
+===== DIRECTORY: ./build/path_provider_android/tmp =====
+===== DIRECTORY: ./build/path_provider_android/tmp/compileDebugJavaWithJavac =====
+===== DIRECTORY: ./ios =====
+===== DIRECTORY: ./ios/Flutter =====
+===== DIRECTORY: ./ios/Runner =====
+===== DIRECTORY: ./ios/Runner/Assets.xcassets =====
+===== DIRECTORY: ./ios/Runner/Assets.xcassets/AppIcon.appiconset =====
+===== DIRECTORY: ./ios/Runner/Assets.xcassets/LaunchImage.imageset =====
+===== DIRECTORY: ./ios/Runner/Base.lproj =====
+===== DIRECTORY: ./ios/Runner.xcodeproj =====
+===== DIRECTORY: ./ios/Runner.xcodeproj/project.xcworkspace =====
+===== DIRECTORY: ./ios/Runner.xcodeproj/project.xcworkspace/xcshareddata =====
+===== DIRECTORY: ./ios/Runner.xcodeproj/xcshareddata =====
+===== DIRECTORY: ./ios/Runner.xcodeproj/xcshareddata/xcschemes =====
+===== DIRECTORY: ./ios/Runner.xcworkspace =====
+===== DIRECTORY: ./ios/Runner.xcworkspace/xcshareddata =====
+===== DIRECTORY: ./ios/RunnerTests =====
+===== DIRECTORY: ./lib =====
+===== DIRECTORY: ./lib/globals =====

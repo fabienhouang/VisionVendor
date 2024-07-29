@@ -13,11 +13,24 @@ Future<void> main() async {
 
   // Get a specific camera from the list of available cameras.
   final firstCamera = cameras.first;
-
   runApp(
     MaterialApp(
-      theme: ThemeData.light(),
-      darkTheme: ThemeData.dark(),
+      theme: ThemeData( // Primary color
+        colorScheme: ColorScheme.fromSeed(seedColor: Color(0xFF4169E1), brightness: Brightness.light),
+        appBarTheme: AppBarTheme(
+            backgroundColor: Color(0xFF4169E1),
+            titleTextStyle: TextStyle(fontSize: 22),
+            centerTitle: true,
+          ),
+      ),
+      darkTheme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Color(0x664169E1), brightness: Brightness.dark),
+        appBarTheme: AppBarTheme(
+            backgroundColor: Color(0x664169E1),
+            titleTextStyle: TextStyle(fontSize: 22),
+            centerTitle: true,
+          ),
+      ),
       home: TakePictureScreen(
         // Pass the appropriate camera to the TakePictureScreen widget.
         camera: firstCamera,
