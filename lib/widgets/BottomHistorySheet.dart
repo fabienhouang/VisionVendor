@@ -20,7 +20,7 @@ class BottomHistorySheet extends StatelessWidget {
       snap: true,
       builder: (BuildContext context, ScrollController scrollSheetController) {
         return Container(
-          color: Colors.black,
+          color: Theme.of(context).scaffoldBackgroundColor,
           child: ListView.builder(
             padding: EdgeInsets.zero,
             physics: ClampingScrollPhysics(),

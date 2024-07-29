@@ -13,41 +13,24 @@ Future<void> main() async {
 
   // Get a specific camera from the list of available cameras.
   final firstCamera = cameras.first;
-  // police : forte regular 
   runApp(
     MaterialApp(
-      theme: ThemeData(
-        primaryColor: Color(0xFFFFD700), // Primary color
-        scaffoldBackgroundColor: Colors.white, // Scaffold background color
-        buttonTheme: ButtonThemeData(
-          buttonColor: Color(0xFFFFD700), // Button background color
-          textTheme: ButtonTextTheme.primary,
-                          
-          disabledColor: Color(0xFF4169E1), // Icon color: Theme.of(context).focusColor, // Background color
-          focusColor: Colors.red, // Focus color
-          hoverColor: Colors.blueAccent, // Hover color
-          splashColor: Colors.cyan, // Splash color
-        ),
-        floatingActionButtonTheme: FloatingActionButtonThemeData(
-          backgroundColor: Color(0xFFFFD700), // Floating action button color
-        ),
-        iconTheme: IconThemeData(
-          color: Color(0xFF4169E1), // Icon color
-        ),
-        inputDecorationTheme: InputDecorationTheme(
-          border: OutlineInputBorder(),
-          focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: Color(0xFF4169E1)),
-          ),
-        ),
+      theme: ThemeData( // Primary color
+        colorScheme: ColorScheme.fromSeed(seedColor: Color(0xFF4169E1), brightness: Brightness.light),
         appBarTheme: AppBarTheme(
-            backgroundColor: Color(0xFFFFD700),
-            titleTextStyle: TextStyle(fontSize: 22, color: Color(0xFF4169E1)),
+            backgroundColor: Color(0xFF4169E1),
+            titleTextStyle: TextStyle(fontSize: 22),
             centerTitle: true,
           ),
       ),
-
-      darkTheme: ThemeData.dark(),
+      darkTheme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Color(0x664169E1), brightness: Brightness.dark),
+        appBarTheme: AppBarTheme(
+            backgroundColor: Color(0x664169E1),
+            titleTextStyle: TextStyle(fontSize: 22),
+            centerTitle: true,
+          ),
+      ),
       home: TakePictureScreen(
         // Pass the appropriate camera to the TakePictureScreen widget.
         camera: firstCamera,

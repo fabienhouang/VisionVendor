@@ -78,7 +78,6 @@ class TakePictureScreenState extends State<TakePictureScreen> {
         Row(children: [
           Expanded(
             child: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 10.0),
               child: FutureBuilder<void>(
                 future: _initializeControllerFuture,
                 builder: (context, snapshot) {
