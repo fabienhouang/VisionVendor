@@ -20,8 +20,8 @@ upgrade-pack:
 doctor:
 	flutter doctor
 
-adb:
-	adb connect 192.168.1.28:44783
-
 all:
 	flutter run --dart-define=API_KEY=${GOOGLE_API_KEY}
+
+release:
+	flutter run --release --dart-define=API_KEY=${GOOGLE_API_KEY}

@@ -177,7 +177,7 @@ class TakePictureScreenState extends State<TakePictureScreen> {
         ])
       ];
 
-      var response = await model.generateContent(content);
+      var response = await model.generateContent(content).timeout(const Duration(seconds: 10));
 
       if (response == null) {
         showError(context, 'No response from API.');

@@ -54,19 +54,19 @@ Map<String, Schema> kpiProperties = {
   ),
   'retail_price': Schema(
     SchemaType.string,
-    description: 'Retail price of the item in dollars',
+    description: 'Retail price of the item',
   ),
   'avg_resale': Schema(
     SchemaType.string,
-    description: 'Average resale price of the item in dollars',
+    description: 'Average resale price of the item',
   ),
   'max_resale': Schema(
     SchemaType.string,
-    description: 'Highest resale price of the item in dollars',
+    description: 'Highest resale price of the item',
   ),
   'min_resale': Schema(
     SchemaType.string,
-    description: 'Lowest resale price of the item in dollars',
+    description: 'Lowest resale price of the item',
   ),
   'link': Schema(
     SchemaType.string,
@@ -104,7 +104,7 @@ final _generationConfig = GenerationConfig(
 
 // Create the GenerativeModel
 final model = GenerativeModel(
-  model: 'gemini-1.5-pro-latest',
+  model: 'gemini-1.5-flash',
   apiKey: _apiKey,
   systemInstruction: Content.system(_instruction),
   generationConfig: _generationConfig,

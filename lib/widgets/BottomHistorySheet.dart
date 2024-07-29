@@ -91,12 +91,31 @@ class ItemCard extends StatelessWidget {
             }
           ),
           title: Text(res["title"]),
-          subtitle: Row(
+          subtitle:
+          Column(
             children: <Widget>[
-              Text("Retail Price:" + res["retail_price"]),
-              Text(", \tResale Price:" + res["min_resale"] + '-' + res["avg_resale"]),
+              Row(
+                children: <Widget>[
+                  Expanded(
+                    child: Text("Brand: " + res["brand"]),
+                  ),
+                  Expanded(
+                    child:Text("Condition: " + res["condition"]),
+                  )
+                ]
+              ),
+              Row(
+                children: <Widget>[
+                  Expanded(
+                    child: Text("Retail: " + res["retail_price"]),
+                  ),
+                  Expanded(
+                    child:Text("Resale: " + res["min_resale"] + '-' + res["max_resale"]),
+                  )
+                ]
+              ),
             ]
-          ),
+          )
         ),
       )
     );

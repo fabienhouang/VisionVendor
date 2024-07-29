@@ -46,22 +46,31 @@ class DisplayPictureScreen extends StatelessWidget {
                   Expanded(
                     flex: 6, // 60%
                     child: Container(
-                      margin: const EdgeInsets.only(left: 10.0),
+                      margin: const EdgeInsets.only(left: 20.0),
                       child : Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.center,
                         children: <Widget>[
-                          Text(
-                            res['title'],
-                            style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
+                          Align(
+                            alignment: Alignment.centerLeft,
+                            child: Text(
+                              res['title'],
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
                           ),
-                          Text(
-                            "Brand: " + res['brand'],
-                            style: TextStyle(
-                              fontSize: 14,
+                          Align(
+                            alignment: Alignment.centerLeft,
+                            child: Text(
+                              "Brand: " + res['brand'],
+                              style: TextStyle(
+                                fontSize: 14,
+                              ),
                             ),
                           ),
+                          Divider(),
                           Text(
                             "Condition: " + res['condition'],
                             style: TextStyle(fontSize: 14,),
