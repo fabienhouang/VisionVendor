@@ -2,6 +2,22 @@ import 'dart:io';
 import '../widgets/InstaImageViewer.dart';
 import 'package:flutter/material.dart';
 
+Color getConditionColor(String condition) {
+      switch (condition) {
+        case 'New':
+          return Colors.green;
+        case 'Excellent':
+          return Colors.teal;
+        case 'Good':
+          return Colors.orange;
+        case 'Used':
+          return Colors.yellow;
+        case 'Damaged':
+          return Colors.red;
+        default:
+          return Colors.black;
+      }
+    }
 // A widget that displays the picture taken by the user.
 class DisplayPictureScreen extends StatelessWidget {
   final Map<String, dynamic> res;
@@ -74,10 +90,27 @@ class DisplayPictureScreen extends StatelessWidget {
                               ),
                             ),
                           ),
+                          SizedBox(height: 6,),
                           Divider(),
-                          Text(
-                            "Condition: " + res['condition'],
-                            style: TextStyle(fontSize: 14,),
+                          SizedBox(height: 6,),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Text(
+                                res['condition'],
+                                style: TextStyle(fontSize: 14, color: getConditionColor(res['condition'])),
+                              ),
+                              SizedBox(width: 5),
+                              Container(
+                                  width: 10,
+                                  height: 10,
+                                  decoration: BoxDecoration(
+                                    color: getConditionColor(res['condition']),
+                                    shape: BoxShape.circle,
+                                  ),
+                              )
+                            ],
                           ),
                           Text(
                             "Retail: " + res['retail_price'],
@@ -88,7 +121,7 @@ class DisplayPictureScreen extends StatelessWidget {
                             style: TextStyle(fontSize: 14,),
                           ),
                           Text(
-                            res['avg_resale'],
+                            "Average :" + res['avg_resale'],
                             style: TextStyle(fontSize: 14,),
                           ),
                         ],
@@ -97,12 +130,13 @@ class DisplayPictureScreen extends StatelessWidget {
                   )
                 ]
               ),
-              SizedBox(height: 12),
+              SizedBox(height: 10),
               Divider(),
               Text(
                 'Description',
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
+              SizedBox(height: 6),
               Text(
                 res['description'],
                 style: TextStyle(fontSize: 14),
