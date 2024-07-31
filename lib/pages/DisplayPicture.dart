@@ -1,7 +1,24 @@
 import 'dart:io';
 import '../widgets/InstaImageViewer.dart';
 import 'package:flutter/material.dart';
+import 'package:geekyants_flutter_gauges/geekyants_flutter_gauges.dart';
 
+Color getConditionColor(String condition) {
+      switch (condition) {
+        case 'New':
+          return Colors.green;
+        case 'Excellent':
+          return Colors.teal;
+        case 'Good':
+          return Colors.yellow;
+        case 'Used':
+          return Colors.orange;
+        case 'Damaged':
+          return Colors.red;
+        default:
+          return Colors.black;
+      }
+    }
 // A widget that displays the picture taken by the user.
 class DisplayPictureScreen extends StatelessWidget {
   final Map<String, dynamic> res;
@@ -74,35 +91,87 @@ class DisplayPictureScreen extends StatelessWidget {
                               ),
                             ),
                           ),
+                          SizedBox(height: 3,),
                           Divider(),
-                          Text(
-                            "Condition: " + res['condition'],
-                            style: TextStyle(fontSize: 14,),
+                          SizedBox(height: 2,),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Text(
+                                "Condition : " + res['condition'],
+                                style: TextStyle(fontSize: 14),
+                              ),
+                              SizedBox(width: 5),
+                              Container(
+                                  width: 10,
+                                  height: 10,
+                                  decoration: BoxDecoration(
+                                    color: getConditionColor(res['condition']),
+                                    shape: BoxShape.circle,
+                                  ),
+                              )
+                            ],
                           ),
                           Text(
-                            "Retail: " + res['retail_price'],
+                            "Retail : \$" + res['retail_price'],
                             style: TextStyle(fontSize: 14,),
                           ),
-                          Text(
-                            "Resale: " + res['min_resale'] + '-' + res['max_resale'],
-                            style: TextStyle(fontSize: 14,),
+                          Text("Resale Price :"),
+                          LinearGauge(
+                          start: double.parse(res['min_resale']),
+                          end: double.parse(res['max_resale']),
+                          steps: (double.parse(res['max_resale']) - double.parse(res['min_resale']) ) / 2,
+                          gaugeOrientation: GaugeOrientation.horizontal,
+                          enableGaugeAnimation: true,
+                          animationDuration: 3000,
+                          linearGaugeBoxDecoration: const LinearGaugeBoxDecoration(
+                              thickness: 5,
+                              linearGradient: LinearGradient(colors: [
+                                Color.fromARGB(255, 255, 114, 107),
+                                Color.fromARGB(255, 255, 165, 0),
+                                Color.fromARGB(255, 107, 255, 115)
+                              ])),
+                          pointers: [
+                            Pointer(
+                              value: double.parse(res['avg_resale']),
+                              shape: PointerShape.triangle,
+                              color: Colors.black.withOpacity(0.5),
+                              pointerPosition: PointerPosition.top,
+                            ),
+                          ],
+                          extendLinearGauge: 10,
+                          customLabels: [
+                            CustomRulerLabel(text: "\$"+ res['min_resale'], value: double.parse(res['min_resale'])),
+                            CustomRulerLabel(text: "\$"+ res['avg_resale'], value: double.parse(res['avg_resale'])),
+                            CustomRulerLabel(text: "\$"+ res['max_resale'], value: double.parse(res['max_resale'])),
+                          ],
+                          rulers: RulerStyle(
+                            inverseRulers: false,
+                            rulerPosition: RulerPosition.bottom,
+                            labelOffset: 5,
+                            rulersOffset: 5,
+                            primaryRulersHeight: 5,
+                            secondaryRulersHeight: 3,
+                            textStyle: const TextStyle(
+                              fontFamily: 'Roboto',
+                              color: Colors.black,
+                            ),
                           ),
-                          Text(
-                            res['avg_resale'],
-                            style: TextStyle(fontSize: 14,),
-                          ),
-                        ],
-                      ),
+                        ),
+                          ],
+                        ),
+                      )
                     )
-                  )
-                ]
-              ),
-              SizedBox(height: 12),
+                  ]
+                ),          
+              SizedBox(height: 5),
               Divider(),
               Text(
                 'Description',
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
+              SizedBox(height: 6),
               Text(
                 res['description'],
                 style: TextStyle(fontSize: 14),

@@ -19,6 +19,7 @@ dependencies:
   path: ^1.9.0
   google_generative_ai: ^0.4.3
   image_picker: ^1.1.2
+  geekyants_flutter_gauges: 1.0.4
 
 dev_dependencies:
   flutter_test:
