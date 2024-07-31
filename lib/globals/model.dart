@@ -8,7 +8,7 @@ var prompt =
     """I need to analyze this image to extract important information for the resale of an item.
 The item to be appraised in located in the center of the image.
 Try to find a title that best matches the item for sale.
-Even if the price estimation or other KPIs (in dollars adding \$ at the beginning) are not accurate, it's okay, I just need an indicative figure.""";
+Even if the price estimation or other KPIs (in dollars units) are not accurate, it's okay, I just need an indicative figure.""";
 
 // Access your API key as an environment variable (see "Set up your API key" above)
 const String _apiKey = String.fromEnvironment('API_KEY');

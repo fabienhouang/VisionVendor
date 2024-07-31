@@ -100,7 +100,20 @@ class ItemCard extends StatelessWidget {
                     child: Text("Brand: " + res["brand"]),
                   ),
                   Expanded(
-                    child:Text("Condition: " + res["condition"], style: TextStyle(color: getConditionColor(res['condition']))),
+                    child:Row(
+                      children: [
+                        Text("Condition: " + res["condition"]),
+                        SizedBox(width: 5),
+                        Container(
+                                  width: 10,
+                                  height: 10,
+                                  decoration: BoxDecoration(
+                                    color: getConditionColor(res['condition']),
+                                    shape: BoxShape.circle,
+                                  ),
+                              )
+                      ],
+                    ),
                   )
                 ]
               ),
