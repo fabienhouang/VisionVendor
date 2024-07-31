@@ -1,5 +1,5 @@
 import 'dart:io';
-
+import '../widgets/InstaImageViewer.dart';
 import 'package:flutter/material.dart';
 
 // A widget that displays the picture taken by the user.
@@ -17,7 +17,7 @@ class DisplayPictureScreen extends StatelessWidget {
       appBar: AppBar(
         title: FittedBox(
           fit: BoxFit.fitWidth,
-          child: Text("Item Description", 
+          child: Text("Item Description",
                 style: TextStyle(fontWeight: FontWeight.bold),
            ),
         )
@@ -40,8 +40,10 @@ class DisplayPictureScreen extends StatelessWidget {
                       ),
                       height: height/4,
                       child: ClipRRect(
-                        borderRadius: BorderRadius.circular(20.0),
-                        child: Image.file(File(res['imagePath']), fit: BoxFit.cover),
+                        borderRadius: BorderRadius.circular(10.0),
+                        child: InstaImageViewer(
+                          child: Image.file(File(res['imagePath']), fit: BoxFit.cover),
+                        )
                       )
                     ),
                   ),
