@@ -15,61 +15,48 @@ const String _apiKey = String.fromEnvironment('API_KEY');
 
 // Define the properties of the KPI object
 Map<String, Schema> kpiProperties = {
-  'title' : Schema(
-    SchemaType.string,
+  'title' : Schema.string(
     description:
-        'Short title of the item, dont be too exhaustive, use a maximum of 10 words for the title of the item that needs to be sold',
+      'Short title of the item, dont be too exhaustive, use a maximum of 10 words for the title of the item that needs to be sold',
   ),
-  'description': Schema(
-    SchemaType.string,
+  'description': Schema.string(
     description:
-        'Description of the item, just make a description of the object that needs to be sold',
+      'Description of the item, just make a description of the object that needs to be sold',
   ),
-  'brand': Schema(
-    SchemaType.string,
+  'brand': Schema.string(
     description: 'Brand of the detected item',
   ),
-  'materials': Schema(
-    SchemaType.string,
+  'materials': Schema.string(
     description: 'Materials of the item',
   ),
-  'colors': Schema(
-    SchemaType.string,
+  'colors': Schema.string(
     description:
-        'Colors of the detected item, can have multiple and separated by comma',
+      'Colors of the detected item, can have multiple and separated by comma',
   ),
-  'weight': Schema(
-    SchemaType.string,
+  'weight': Schema.string(
     description:
-        'Estimation of the weight of the detected item and add the units at the end of the number, in kg',
+      'Estimation of the weight of the detected item and add the units at the end of the number, in kg',
   ),
-  'category': Schema(
-    SchemaType.string,
+  'category': Schema.string(
     description: 'Category of the detected item',
   ),
-  'condition': Schema(
-    SchemaType.string,
+  'condition': Schema.enumString(
     description: 'Condition of the item',
-    enumValues: ['New', 'Excellent', 'Good', 'Used', 'Damaged'],
+    enumValues: ['New', 'Good', 'Used', 'Damaged', 'Broken'],
   ),
-  'retail_price': Schema(
-    SchemaType.string,
+  'retail_price': Schema.integer(
     description: 'Retail price of the item',
   ),
-  'avg_resale': Schema(
-    SchemaType.string,
+  'avg_resale': Schema.integer(
     description: 'Average resale price of the item',
   ),
-  'max_resale': Schema(
-    SchemaType.string,
+  'max_resale': Schema.integer(
     description: 'Highest resale price of the item',
   ),
-  'min_resale': Schema(
-    SchemaType.string,
+  'min_resale': Schema.integer(
     description: 'Lowest resale price of the item',
   ),
-  'link': Schema(
-    SchemaType.string,
+  'link': Schema.string(
     description: 'One link where I can find this item',
   ),
 };

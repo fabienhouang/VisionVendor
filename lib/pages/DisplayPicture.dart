@@ -7,13 +7,13 @@ Color getConditionColor(String condition) {
       switch (condition) {
         case 'New':
           return Colors.green;
-        case 'Excellent':
-          return Colors.teal;
         case 'Good':
-          return Colors.yellow;
+          return Colors.lightGreenAccent;
         case 'Used':
-          return Colors.orange;
+          return Colors.yellow;
         case 'Damaged':
+          return Colors.orange;
+        case 'Broken':
           return Colors.red;
         default:
           return Colors.black;
@@ -59,7 +59,7 @@ class DisplayPictureScreen extends StatelessWidget {
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(10.0),
                         child: InstaImageViewer(
-                          child: Image.file(File(res['imagePath']), fit: BoxFit.cover),
+                          child: Image.file(File(res['imagePath']),),
                         )
                       )
                     ),
@@ -114,57 +114,56 @@ class DisplayPictureScreen extends StatelessWidget {
                             ],
                           ),
                           Text(
-                            "Retail : \$" + res['retail_price'],
+                            "Retail : \$" + res['retail_price'].toString(),
                             style: TextStyle(fontSize: 14,),
                           ),
                           Text("Resale Price :"),
                           LinearGauge(
-                          start: double.parse(res['min_resale']),
-                          end: double.parse(res['max_resale']),
-                          steps: (double.parse(res['max_resale']) - double.parse(res['min_resale']) ) / 2,
-                          gaugeOrientation: GaugeOrientation.horizontal,
-                          enableGaugeAnimation: true,
-                          animationDuration: 3000,
-                          linearGaugeBoxDecoration: const LinearGaugeBoxDecoration(
-                              thickness: 5,
-                              linearGradient: LinearGradient(colors: [
-                                Color.fromARGB(255, 255, 114, 107),
-                                Color.fromARGB(255, 255, 165, 0),
-                                Color.fromARGB(255, 107, 255, 115)
-                              ])),
-                          pointers: [
-                            Pointer(
-                              value: double.parse(res['avg_resale']),
-                              shape: PointerShape.triangle,
-                              color: Colors.black.withOpacity(0.5),
-                              pointerPosition: PointerPosition.top,
-                            ),
-                          ],
-                          extendLinearGauge: 10,
-                          customLabels: [
-                            CustomRulerLabel(text: "\$"+ res['min_resale'], value: double.parse(res['min_resale'])),
-                            CustomRulerLabel(text: "\$"+ res['avg_resale'], value: double.parse(res['avg_resale'])),
-                            CustomRulerLabel(text: "\$"+ res['max_resale'], value: double.parse(res['max_resale'])),
-                          ],
-                          rulers: RulerStyle(
-                            inverseRulers: false,
-                            rulerPosition: RulerPosition.bottom,
-                            labelOffset: 5,
-                            rulersOffset: 5,
-                            primaryRulersHeight: 5,
-                            secondaryRulersHeight: 3,
-                            textStyle: const TextStyle(
-                              fontFamily: 'Roboto',
-                              color: Colors.black,
+                            start: double.parse(res['min_resale'].toString()),
+                            end: double.parse(res['max_resale'].toString()),
+                            steps: (double.parse(res['max_resale'].toString()) - double.parse(res['min_resale'].toString())) / 2,
+                            gaugeOrientation: GaugeOrientation.horizontal,
+                            enableGaugeAnimation: true,
+                            animationDuration: 3000,
+                            linearGaugeBoxDecoration: const LinearGaugeBoxDecoration(
+                                thickness: 5,
+                                linearGradient: LinearGradient(colors: [
+                                  Color.fromARGB(255, 255, 114, 107),
+                                  Color.fromARGB(255, 255, 165, 0),
+                                  Color.fromARGB(255, 107, 255, 115)
+                                ])),
+                            pointers: [
+                              Pointer(
+                                value: double.parse(res['avg_resale'].toString()),
+                                shape: PointerShape.triangle,
+                                color: Theme.of(context).textTheme.bodyMedium!.color!,
+                                pointerPosition: PointerPosition.top,
+                              ),
+                            ],
+                            extendLinearGauge: 10,
+                            customLabels: [
+                              CustomRulerLabel(text: "\$"+ res['min_resale'].toString(), value: double.parse(res['min_resale'].toString())),
+                              CustomRulerLabel(text: "\$"+ res['avg_resale'].toString(), value: double.parse(res['avg_resale'].toString())),
+                              CustomRulerLabel(text: "\$"+ res['max_resale'].toString(), value: double.parse(res['max_resale'].toString())),
+                            ],
+                            rulers: RulerStyle(
+                              inverseRulers: false,
+                              rulerPosition: RulerPosition.bottom,
+                              labelOffset: 5,
+                              rulersOffset: 5,
+                              primaryRulersHeight: 5,
+                              secondaryRulersHeight: 3,
+                              textStyle: TextStyle(
+                                color: Theme.of(context).textTheme.bodyMedium!.color,
+                              ),
                             ),
                           ),
-                        ),
-                          ],
-                        ),
-                      )
+                        ],
+                      ),
                     )
-                  ]
-                ),          
+                  )
+                ]
+              ),
               SizedBox(height: 5),
               Divider(),
               Text(

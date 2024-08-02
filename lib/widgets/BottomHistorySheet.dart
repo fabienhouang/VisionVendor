@@ -120,10 +120,10 @@ class ItemCard extends StatelessWidget {
               Row(
                 children: <Widget>[
                   Expanded(
-                    child: Text("Retail: " + res["retail_price"]),
+                    child: Text("Retail: \$" + res["retail_price"].toString()),
                   ),
                   Expanded(
-                    child:Text("Resale: " + res["min_resale"] + '-' + res["max_resale"]),
+                    child:Text("Resale: \$" + res["min_resale"].toString() + '-\$' + res["max_resale"].toString()),
                   )
                 ]
               ),
