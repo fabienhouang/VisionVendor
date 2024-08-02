@@ -8,7 +8,7 @@ var prompt =
     """I need to analyze this image to extract important information for the resale of an item.
 The item to be appraised in located in the center of the image.
 Try to find a title that best matches the item for sale.
-Even if the price estimation or other KPIs (in dollars units) are not accurate, it's okay, I just need an indicative figure.""";
+Even if the price estimation or other KPIs (in dollars in US) are not accurate, it's okay, I just need an indicative figure.""";
 
 // Access your API key as an environment variable (see "Set up your API key" above)
 const String _apiKey = String.fromEnvironment('API_KEY');
@@ -91,7 +91,7 @@ final _generationConfig = GenerationConfig(
 
 // Create the GenerativeModel
 final model = GenerativeModel(
-  model: 'gemini-1.5-flash',
+  model: 'gemini-1.5-pro',
   apiKey: _apiKey,
   systemInstruction: Content.system(_instruction),
   generationConfig: _generationConfig,
