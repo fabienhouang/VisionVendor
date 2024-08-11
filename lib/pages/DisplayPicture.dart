@@ -2,6 +2,7 @@ import 'dart:io';
 import '../widgets/InstaImageViewer.dart';
 import 'package:flutter/material.dart';
 import 'package:geekyants_flutter_gauges/geekyants_flutter_gauges.dart';
+import 'package:external_app_launcher/external_app_launcher.dart';
 
 Color getConditionColor(String condition) {
       switch (condition) {
@@ -216,6 +217,29 @@ class DisplayPictureScreen extends StatelessWidget {
                             leading: Icon(Icons.link,),
                             title: Text('Link'),
                             subtitle: Text(res['link']),
+                          ),
+                          ListTile(
+                            leading: Icon(Icons.sell,),
+                            title: Text('Sell on Ebay'),
+                            onTap: () async {
+                              await LaunchApp.openApp(
+                                androidPackageName: 'com.ebay.mobile',
+                                iosUrlScheme: 'ebay://',
+                                appStoreLink: 'itms-apps://apps.apple.com/us/app/ebay/id282614216',
+                                //openStore: False
+                              );
+                            }
+                          ),
+                          ListTile(
+                            leading: Icon(Icons.storefront,),
+                            title: Text('Sell on Facebook Market'),
+                            onTap: () async {
+                              await LaunchApp.openApp(
+                                androidPackageName: 'com.facebook.katana',
+                                iosUrlScheme: 'facebook://',
+                                appStoreLink: 'itms-apps://apps.apple.com/us/app/facebook/id284882215',
+                              );
+                            }
                           ),
                         ],
                       ),

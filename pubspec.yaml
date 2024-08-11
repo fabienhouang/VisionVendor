@@ -20,6 +20,7 @@ dependencies:
   google_generative_ai: ^0.4.3
   image_picker: ^1.1.2
   geekyants_flutter_gauges: 1.0.4
+  external_app_launcher: ^4.0.0
 
 dev_dependencies:
   flutter_test:
