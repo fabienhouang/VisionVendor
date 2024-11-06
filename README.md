@@ -6,7 +6,11 @@ Vision Vendor is your go-to app for quick item appraisal, designed to simplify t
 
 Tech Stack : Flutter, Gemini API
 
-YT Demo Video : (Coming Soon)
+Links :
+
+[YouTube Demo Video](https://youtu.be/iCTtXtMeJf4?si=4tWYNR0kAFwZph99)
+
+[Link to Gemini API Developer Competition](https://ai.google.dev/competition/projects/vision-vendor)
 
 ## Prerequisites
 
